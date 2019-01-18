@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/18 21:59:38 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/18 22:08:39 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct				s_file
 }							t_file;
 
 int				ls_files_r(char *name);
-t_file			*ls_dir(DIR *cur_dir);
-t_file			  *t_file_new(char *name);
+t_file			*ls_dir(DIR *cur_dir, char *name);
+t_file			  *t_file_new(char *name, char *full_name);
 
 #endif

@@ -6,20 +6,20 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/18 21:59:40 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/18 22:09:47 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_file			*ls_dir(DIR *cur_dir)
+t_file			*ls_dir(DIR *cur_dir, char *full_name)
 {
 	struct dirent	*file;
 	t_file			*file_lst = NULL;
 	t_file			*node = NULL;
 	while ((file = readdir(cur_dir)))
 	{
-		node = t_file_new(file->d_name);
+	node = t_file_new(file->d_name, full_name);
 		node->prev = file_lst;
 		if (file_lst)
 			file_lst->next = node;
