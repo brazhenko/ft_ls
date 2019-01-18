@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/18 22:37:47 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/18 22:42:40 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ typedef struct				s_file
 	struct dirent	*dir_dirent;
 	struct stat		*dir_stat;
 }							t_file;
+
+typedef struct				s_flags
+{
+	int			l;
+	int			rec;
+	int			a;
+	int			r;
+	int			t;
+	int			u;
+	int			f;
+	int			g;
+	int			d;
+}							t_flags;
 
 int				ls_files_r(char *name);
 t_file			*ls_dir(DIR *cur_dir, char *name);
