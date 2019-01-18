@@ -7,6 +7,7 @@ all:
 			$(SRC)/ls_files_r.c \
 			$(SRC)/t_file_new.c \
 			$(SRC)/ls_dir.c \
+			$(SRC)/parse_flags.c \
 			libft.a \
 			-I $(INCLUDE) \
 			-o ft_ls
