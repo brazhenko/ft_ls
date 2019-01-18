@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 02:46:53 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/19 02:49:17 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ int					ls_files_r(char *name);
 t_file				*ls_dir(DIR *cur_dir, char *name);
 t_file				*t_file_new(char *name, char *full_name);
 int					parser(int argc, char **argv, t_flags *flags);
-char				*parse_flags(int argc, char **argv);
+char				*parse_flags(int argc, char **argv, int *last_flag);
 
 #endif

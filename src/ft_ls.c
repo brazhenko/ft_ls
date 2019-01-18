@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 02:46:55 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/19 02:49:27 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int		main(int c, char **v)
 {
 	char			*flags;
-
-	flags = parse_flags(c, v);
+	int				last_flag;
+	flags = parse_flags(c, v, &last_flag);
 
 	// ls_files_r(argv[1]);
 	return (0);
