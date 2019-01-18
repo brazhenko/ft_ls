@@ -1,20 +1,7 @@
-! test
-! src
-! README.md
-! Makefile
-! libft.a
-! inc
-! ft_ls
-! .vscode
-! .Makefile.swp
-! .gitignore
-! .git
-! ..
-! .
-
-
+src
 ! test
 ! t_file_new.c
+! parse_flags.c
 ! ls_files_r.c
 ! ls_dir.c
 ! is_visible.c
@@ -28,11 +15,13 @@
 ! .
 
 
+src/test
 ! tes
 ! ..
 ! .
 
 
+src/test/tes
 ! 3
 ! 2
 ! 1
@@ -40,42 +29,7 @@
 ! .
 
 
-! libft.h
-! ft_ls.h
-! .ft_ls.h.swp
-! ..
-! .
 
-
-.
-..
-.Makefile.swp
-.git
-.gitignore
-.vscode
-Makefile
-README.md
-ft_ls
-inc
-libft.a
-src
-test
-
-
-./.vscode:
-.
-..
-c_cpp_properties.json
-settings.json
-
-./inc:
-.
-..
-.ft_ls.h.swp
-ft_ls.h
-libft.h
-
-./src:
 .
 ..
 .ft_ls.c.swp
@@ -87,15 +41,16 @@ ft_ls.c
 is_visible.c
 ls_dir.c
 ls_files_r.c
+parse_flags.c
 t_file_new.c
 test
 
-./src/test:
+src/test:
 .
 ..
 tes
 
-./src/test/tes:
+src/test/tes:
 .
 ..
 1
