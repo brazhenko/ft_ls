@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 21:19:18 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/18 22:08:49 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/18 22:16:00 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ t_file  *t_file_new(char *name, char *full_name)
     new->name = name;
     new->prev = NULL;
     new->next = NULL;
+    stat(full_name, new->dir_stat);
+
     return (new);
 }
