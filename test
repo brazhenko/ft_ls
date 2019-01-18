@@ -1,0 +1,103 @@
+! test
+! src
+! README.md
+! Makefile
+! libft.a
+! inc
+! ft_ls
+! .vscode
+! .Makefile.swp
+! .gitignore
+! .git
+! ..
+! .
+
+
+! test
+! t_file_new.c
+! ls_files_r.c
+! ls_dir.c
+! is_visible.c
+! ft_ls.c
+! .t_file_new.c.swp
+! .ls_files_r.c.swp
+! .ls_dir.c.swp
+! .is_visible.c.swp
+! .ft_ls.c.swp
+! ..
+! .
+
+
+! tes
+! ..
+! .
+
+
+! 3
+! 2
+! 1
+! ..
+! .
+
+
+! libft.h
+! ft_ls.h
+! .ft_ls.h.swp
+! ..
+! .
+
+
+.
+..
+.Makefile.swp
+.git
+.gitignore
+.vscode
+Makefile
+README.md
+ft_ls
+inc
+libft.a
+src
+test
+
+
+./.vscode:
+.
+..
+c_cpp_properties.json
+settings.json
+
+./inc:
+.
+..
+.ft_ls.h.swp
+ft_ls.h
+libft.h
+
+./src:
+.
+..
+.ft_ls.c.swp
+.is_visible.c.swp
+.ls_dir.c.swp
+.ls_files_r.c.swp
+.t_file_new.c.swp
+ft_ls.c
+is_visible.c
+ls_dir.c
+ls_files_r.c
+t_file_new.c
+test
+
+./src/test:
+.
+..
+tes
+
+./src/test/tes:
+.
+..
+1
+2
+3

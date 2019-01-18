@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/18 22:09:47 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/18 22:37:49 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name)
 	struct dirent	*file;
 	t_file			*file_lst = NULL;
 	t_file			*node = NULL;
+	
+	printf("%s\n", full_name);
 	while ((file = readdir(cur_dir)))
 	{
 	node = t_file_new(file->d_name, full_name);
@@ -25,7 +27,6 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name)
 			file_lst->next = node;
 		file_lst = node;
 		// printf("write.. %s\n", file->d_name);
-		
 	}
 	while (file_lst)
 	{
