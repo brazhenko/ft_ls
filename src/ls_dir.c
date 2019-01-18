@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   ls_dir.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/18 21:00:38 by lreznak-         ###   ########.fr       */
+/*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
+/*   Updated: 2019/01/18 21:00:36 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		main(int argc, char **argv)
+t_file			*ls_dir(DIR *cur_dir)
 {
-	ls_files_r(argv[1]);
-	return (0);
+	struct dirent	*file;
+	
+	while ((file = readdir(cur_dir)))
+	{
+		printf("%s\n", file->d_name);
+		
+	}
+
+	return (NULL);	
 }

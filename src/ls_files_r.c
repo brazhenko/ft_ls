@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:25:50 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/17 22:51:42 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/18 21:00:40 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,18 @@ int		ls_files_r(char *name)
 {
 	DIR				*cur_dir;
 	struct dirent	*file;
+	t_file			*cur_dir_lst;
 
+// 	printf("%s\n", ft_strjoin(ft_strjoin(name, "/"), );
 	cur_dir = opendir(name);
-
-	while ((file = readdir(cur_dir)))
+	cur_dir_lst = ls_dir(cur_dir);
+	while (cur_dir_lst)
 	{
-		printf("%s\n", file->d_name);
-		if (file->d_type == 4 && file->d_name[0] != '.')
+		if (cur_dir_lst->dir_dirent->d_type == 4 && cur_dir_lst->dir_dirent->d_name[0] != '.')
 		{
-			printf("\n\n%s\n", ft_strjoin(ft_strjoin(name, "/"), file->d_name));
-			ls_files_r(ft_strjoin(ft_strjoin(name, "/"), file->d_name));
+			ls_files_r(ft_strjoin(ft_strjoin(name, "/"), cur_dir_lst->name));
 		}
 	}
+
 	return (1);
 }

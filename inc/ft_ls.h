@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/17 22:51:44 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/18 21:00:39 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 # include <time.h>
 # include <fcntl.h>
 
-int		ls_files_r(char *name);
 
 typedef struct				s_file
 {
@@ -39,5 +38,8 @@ typedef struct				s_file
 	struct dirent	*dir_dirent;
 	struct stat		*dir_stat;
 }							t_file;
+
+int				ls_files_r(char *name);
+t_file			*ls_dir(DIR *cur_dir);
 
 #endif
