@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/18 21:24:42 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/18 21:28:00 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_file			*ls_dir(DIR *cur_dir)
 		printf("write.. %s\n", file->d_name);
 		
 	}
+
 
 
 	return (NULL);	
