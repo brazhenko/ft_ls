@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/19 04:34:45 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/19 06:09:50 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_file			*to_list(char *name, char *full_name, t_file *list)
 {
+
+
 	while (list && list->next)
 		list = list->next;
 	t_file *node = t_file_new(name, full_name);
@@ -35,14 +37,13 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name)
 		
 		// printf("write.. %s\n", file->d_name);
 	}
+	// file_lst = insert_sort(&file_lst, &file_name_cmp);
 	while (file_lst)
 	{
-		printf("%s\n", file_lst->name);
+		printf("%s          %ld\n", file_lst->name, ((file_lst->dir_stat).st_ctimespec).tv_sec);
 		// ft_putendl(file_lst->name);
 		file_lst = file_lst->prev;
 	}
 	printf("\n\n");
 	return (file_lst);	
 }
-
-

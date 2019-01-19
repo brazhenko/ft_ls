@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/19 03:26:03 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 03:34:02 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/19 05:44:55 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ static	int			parse_flag(char *arg, char **flags)
 				print_usage(*arg);
 			arg++;
 		}
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }
 
 char				*parse_flags(int argc, char **argv, int *last_flag)
@@ -50,14 +50,14 @@ char				*parse_flags(int argc, char **argv, int *last_flag)
 	int		i;
 	char	*flags;
 
-	flags = malloc(sizeof(char) * 128);	
 	i = 1;
-	if (i >= argc)
-		*last_flag = 0;
+	flags = malloc(sizeof(char) * 128);	
+	*last_flag = 0;
 	while (i < argc)
 	{
-		if (parse_flag(argv[i], &flags))
-			*last_flag = i - 1;
+		if (!parse_flag(argv[i], &flags))
+			return (flags);
+		*last_flag = i;
 		i++;
 	}
 	return (flags);

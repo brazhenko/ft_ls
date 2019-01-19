@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_file_new.c                                       :+:      :+:    :+:   */
+/*   file_name_cmp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/18 21:19:18 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 06:10:01 by bbaelor-         ###   ########.fr       */
+/*   Created: 2019/01/19 04:38:14 by bbaelor-          #+#    #+#             */
+/*   Updated: 2019/01/19 04:40:17 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_file  *t_file_new(char *name, char *full_name)
+int             file_name_cmp(t_file* left, t_file *right)
 {
-    t_file *new;
-
-    new = (t_file *)malloc(sizeof(t_file));
-    new->name = name;
-    new->prev = NULL;
-    new->next = NULL;
-    stat(full_name, &new->dir_stat);
-
-    return (new);
+    return (ft_strcmp(left->name, right->name));
 }

@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 03:46:45 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/19 06:09:42 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct				s_file
 	int				is_handled;
 	DIR				*dir_struct;
 	struct dirent	*dir_dirent;
-	struct stat		*dir_stat;
+	struct stat		dir_stat;
 }							t_file;
 
 typedef struct				s_flags
@@ -58,5 +58,9 @@ t_file				*ls_dir(DIR *cur_dir, char *name);
 t_file				*t_file_new(char *name, char *full_name);
 int					parser(int argc, char **argv, t_flags *flags);
 char				*parse_flags(int argc, char **argv, int *last_flag);
+int					file_name_cmp(t_file *left, t_file *right);
+void				add_to_lst(t_file **lst, t_file *node);
+t_file				*to_list(char *name, char *full_name, t_file *list);
+void	ft_exit(char *str);
 
 #endif
