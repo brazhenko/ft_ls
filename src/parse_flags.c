@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 22:43:21 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 03:11:36 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/19 03:13:47 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static	int			parse_flag(char *arg, char **flags)
 		while (*arg)
 		{
 			if (is_flag(*arg))
-				(*flags)[*arg] = 1;
+				(*flags)[((int)*arg)] = 1;
 			else
 				print_usage(*arg);
 			arg++;
