@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 22:43:21 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 02:52:07 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/19 03:11:36 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ char				*parse_flags(int argc, char **argv, int *last_flag)
 
 	flags = malloc(sizeof(char) * 128);	
 	i = 1;
+	if (i >= argc)
+		*last_flag = 0;
 	while (i < argc)
 	{
 		if (parse_flag(argv[i], &flags))
