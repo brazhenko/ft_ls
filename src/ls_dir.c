@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/19 03:30:24 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/19 03:42:43 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,22 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name)
 	}
 	printf("\n\n");
 	return (node);	
+}
+
+t_file			*to_list(DIR *cur_dir, char *name)
+{
+	struct dirent	*file;
+	t_file			*node;
+	t_file			*file_lst;
+
+	file_lst = NULL;
+	while ((file = readdir(cur_dir)))
+	{
+		node = t_file_new(file->d_name, name);
+		node->prev = file_lst;
+		if (file_lst)
+			file_lst->next = node;
+		file_lst = node;
+	}
+	return (node);
 }
