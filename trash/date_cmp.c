@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   date_cmp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 03:18:35 by lreznak-         ###   ########.fr       */
+/*   Created: 2018/12/29 04:08:09 by lreznak-          #+#    #+#             */
+/*   Updated: 2018/12/29 04:19:24 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "../include/ft_ls.h"
 
-int		main(int c, char **v)
+int				date_cmp(t_file *first, t_file *second)
 {
-	char			*flags;
-	int				last_flag;
-	flags = parse_flags(c, v, &last_flag);
-
-	printf("%d\n", last_flag);
-	// ls_files_r(argv[1]);
-	return (0);
+	if (!first)
+		return (1);
+	return(first->time_in_seconds - second->time_in_seconds);
 }
