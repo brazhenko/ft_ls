@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_ls.h"
+#include "ft_ls.h"
 
 int				date_cmp(t_file *first, t_file *second)
 {
