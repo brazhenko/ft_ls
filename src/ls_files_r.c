@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:25:50 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 01:05:58 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/19 04:33:25 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ls_files_r(char *full_name)
 		{
 			ls_files_r(ft_strjoin(ft_strjoin(full_name, "/"), cur_dir_lst->name));
 		}
-		cur_dir_lst = cur_dir_lst->prev;
+		cur_dir_lst = cur_dir_lst->next;
 	}
 	return (1);
 }
