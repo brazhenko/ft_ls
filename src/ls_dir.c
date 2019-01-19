@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/19 03:42:43 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/19 03:55:47 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name)
 		if (file_lst)
 			file_lst->next = node;
 		file_lst = node;
-		// printf("write.. %s\n", file->d_name);
+		printf("write.. %s\n", file->d_name);
 	}
 	while (file_lst)
 	{
-		printf("%s\n", file_lst->name);
+		// printf("%s\n", file_lst->name);
 		// ft_putendl(file_lst->name);
 		file_lst = file_lst->prev;
 	}
