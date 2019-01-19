@@ -6,11 +6,11 @@
 /*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 03:38:48 by lreznak-          #+#    #+#             */
-/*   Updated: 2018/12/29 06:40:31 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/01/19 03:46:46 by lreznak-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_ls.h"
+#include "ft_ls.h"
 
 static int		files_count(t_file *begin)
 {
