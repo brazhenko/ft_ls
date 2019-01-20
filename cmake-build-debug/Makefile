@@ -312,6 +312,33 @@ src/t_file_new.c.s:
 	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/t_file_new.c.s
 .PHONY : src/t_file_new.c.s
 
+src/to_list.o: src/to_list.c.o
+
+.PHONY : src/to_list.o
+
+# target to build an object file
+src/to_list.c.o:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/to_list.c.o
+.PHONY : src/to_list.c.o
+
+src/to_list.i: src/to_list.c.i
+
+.PHONY : src/to_list.i
+
+# target to preprocess a source file
+src/to_list.c.i:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/to_list.c.i
+.PHONY : src/to_list.c.i
+
+src/to_list.s: src/to_list.c.s
+
+.PHONY : src/to_list.s
+
+# target to generate assembly for a file
+src/to_list.c.s:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/to_list.c.s
+.PHONY : src/to_list.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -342,6 +369,9 @@ help:
 	@echo "... src/t_file_new.o"
 	@echo "... src/t_file_new.i"
 	@echo "... src/t_file_new.s"
+	@echo "... src/to_list.o"
+	@echo "... src/to_list.i"
+	@echo "... src/to_list.s"
 .PHONY : help
 
 

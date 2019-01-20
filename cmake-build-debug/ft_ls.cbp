@@ -101,6 +101,9 @@
 		<Unit filename="/Users/andrew/Documents/42/ls/src/t_file_new.c">
 			<Option target="ft_ls"/>
 		</Unit>
+		<Unit filename="/Users/andrew/Documents/42/ls/src/to_list.c">
+			<Option target="ft_ls"/>
+		</Unit>
 		<Unit filename="/Users/andrew/Documents/42/ls/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

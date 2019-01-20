@@ -42,31 +42,11 @@ stdlib.h
 stdio.h
 -
 
-/Users/andrew/Documents/42/ls/src/file_name_cmp.c
-ft_ls.h
-/Users/andrew/Documents/42/ls/src/ft_ls.h
-
 /Users/andrew/Documents/42/ls/src/ft_ls.c
 ft_ls.h
 /Users/andrew/Documents/42/ls/src/ft_ls.h
 
-/Users/andrew/Documents/42/ls/src/is_visible.c
-ft_ls.h
-/Users/andrew/Documents/42/ls/src/ft_ls.h
-
-/Users/andrew/Documents/42/ls/src/ls_dir.c
-ft_ls.h
-/Users/andrew/Documents/42/ls/src/ft_ls.h
-
-/Users/andrew/Documents/42/ls/src/ls_files_r.c
-ft_ls.h
-/Users/andrew/Documents/42/ls/src/ft_ls.h
-
 /Users/andrew/Documents/42/ls/src/parse_flags.c
-ft_ls.h
-/Users/andrew/Documents/42/ls/src/ft_ls.h
-
-/Users/andrew/Documents/42/ls/src/t_file_new.c
 ft_ls.h
 /Users/andrew/Documents/42/ls/src/ft_ls.h
 

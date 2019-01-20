@@ -30,9 +30,9 @@ static void			print_flags(char *flags)
 
 int		main(int c, char **v)
 {
-	int 		last_flag;
-	char 		*flags;
-	t_list		*args;
+	int 			last_flag;
+	char 			*flags;
+	t_file			*args;
 
 	args = NULL;
 	flags = parse_flags(c, v, &last_flag);
@@ -49,7 +49,15 @@ int		main(int c, char **v)
 	{
 		while (last_flag < c)
 		{
+
+			args = to_list(NULL, v[last_flag], v[last_flag], args);
 			last_flag++;
+		}
+		printf("_______________________\n");
+		while (args)
+		{
+			printf("%s     ", args->name);
+			args = args->prev;
 		}
 	}
 	return (0);

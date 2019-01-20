@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/andrew/Documents/42/ls/src/ls_files_r.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_files_r.c.o"
   "/Users/andrew/Documents/42/ls/src/parse_flags.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/parse_flags.c.o"
   "/Users/andrew/Documents/42/ls/src/t_file_new.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/t_file_new.c.o"
+  "/Users/andrew/Documents/42/ls/src/to_list.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/to_list.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
