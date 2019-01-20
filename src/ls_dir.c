@@ -21,13 +21,11 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name)
 	while ((file = readdir(cur_dir)))
 	{
 		file_lst = to_list(file, file->d_name, full_name, file_lst);
-		
 		//printf("write.. %s\n", file_lst->name);
 	}
 	while (file_lst)
 	{
-		printf("%s        %s", file_lst->name , ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
-		// ft_putendl(file_lst->name);
+		printf("--%s        %s", file_lst->name , ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
 		if (!file_lst->prev)
 			return (file_lst);
 		file_lst = file_lst->prev;

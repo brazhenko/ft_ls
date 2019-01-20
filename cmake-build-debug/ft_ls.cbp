@@ -97,20 +97,19 @@
 		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/ls_files_r.c">
 			<Option target="ft_ls"/>
 		</Unit>
+		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/merge_sort.c">
+			<Option target="ft_ls"/>
+		</Unit>
 		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/parse_flags.c">
 			<Option target="ft_ls"/>
 		</Unit>
 		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/t_file_new.c">
 			<Option target="ft_ls"/>
 		</Unit>
-<<<<<<< HEAD
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/CMakeLists.txt">
-=======
-		<Unit filename="/Users/andrew/Documents/42/ls/src/to_list.c">
+		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/to_list.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/andrew/Documents/42/ls/CMakeLists.txt">
->>>>>>> 0cb9204d17582782e47e0ee506608ab85eb76c30
+		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

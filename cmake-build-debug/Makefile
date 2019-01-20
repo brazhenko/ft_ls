@@ -258,6 +258,33 @@ src/ls_files_r.c.s:
 	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/ls_files_r.c.s
 .PHONY : src/ls_files_r.c.s
 
+src/merge_sort.o: src/merge_sort.c.o
+
+.PHONY : src/merge_sort.o
+
+# target to build an object file
+src/merge_sort.c.o:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/merge_sort.c.o
+.PHONY : src/merge_sort.c.o
+
+src/merge_sort.i: src/merge_sort.c.i
+
+.PHONY : src/merge_sort.i
+
+# target to preprocess a source file
+src/merge_sort.c.i:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/merge_sort.c.i
+.PHONY : src/merge_sort.c.i
+
+src/merge_sort.s: src/merge_sort.c.s
+
+.PHONY : src/merge_sort.s
+
+# target to generate assembly for a file
+src/merge_sort.c.s:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/merge_sort.c.s
+.PHONY : src/merge_sort.c.s
+
 src/parse_flags.o: src/parse_flags.c.o
 
 .PHONY : src/parse_flags.o
@@ -363,6 +390,9 @@ help:
 	@echo "... src/ls_files_r.o"
 	@echo "... src/ls_files_r.i"
 	@echo "... src/ls_files_r.s"
+	@echo "... src/merge_sort.o"
+	@echo "... src/merge_sort.i"
+	@echo "... src/merge_sort.s"
 	@echo "... src/parse_flags.o"
 	@echo "... src/parse_flags.i"
 	@echo "... src/parse_flags.s"

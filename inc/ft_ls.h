@@ -34,29 +34,19 @@ typedef struct				s_file
 	struct s_file	*prev;
 
 	char			*name;
+	int 			data;
 	int				is_handled;
 	DIR				*dir_struct;
 	struct dirent	*dir_dirent;
 	struct stat		dir_stat;
 }							t_file;
 
-typedef struct				s_flags
-{
-	int			l;
-	int			rec;
-	int			a;
-	int			r;
-	int			t;
-	int			u;
-	int			f;
-	int			g;
-	int			d;
-}							t_flags;
+
 
 int					ls_files_r(char *name);
 t_file				*ls_dir(DIR *cur_dir, char *name);
 t_file              *t_file_new(struct dirent *file, char *name, char *full_name);
-int					parser(int argc, char **argv, t_flags *flags);
+// int					parser(int argc, char **argv, t_flags *flags);
 char				*parse_flags(int argc, char **argv, int *last_flag);
 int					file_name_cmp(t_file *left, t_file *right);
 void				add_to_lst(t_file **lst, t_file *node);

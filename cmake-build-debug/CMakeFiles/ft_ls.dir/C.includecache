@@ -42,11 +42,7 @@ stdlib.h
 stdio.h
 -
 
-/Users/andrew/Documents/42/ls/src/ft_ls.c
+/Users/lreznak-/Documents/ft_ls_new/src/ls_dir.c
 ft_ls.h
-/Users/andrew/Documents/42/ls/src/ft_ls.h
-
-/Users/andrew/Documents/42/ls/src/parse_flags.c
-ft_ls.h
-/Users/andrew/Documents/42/ls/src/ft_ls.h
+/Users/lreznak-/Documents/ft_ls_new/src/ft_ls.h
 

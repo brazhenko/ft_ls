@@ -27,8 +27,7 @@ static void			print_flags(char *flags)
 	}
 }
 
-
-int		main(int c, char **v)
+int		main(int c, char *v[])
 {
 	int 			last_flag;
 	char 			*flags;

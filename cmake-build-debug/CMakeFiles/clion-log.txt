@@ -1,15 +1,4 @@
-<<<<<<< HEAD
 /Users/lreznak-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/lreznak-/Documents/ft_ls_new
--- The C compiler identification is AppleClang 9.0.0.9000038
--- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
--- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
-=======
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/andrew/Documents/42/ls
->>>>>>> 0cb9204d17582782e47e0ee506608ab85eb76c30
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/lreznak-/Documents/ft_ls_new/cmake-build-debug
