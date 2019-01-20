@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+<<<<<<< HEAD
   "/Users/lreznak-/Documents/ft_ls_new/src/file_name_cmp.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/file_name_cmp.c.o"
   "/Users/lreznak-/Documents/ft_ls_new/src/ft_ls.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ft_ls.c.o"
   "/Users/lreznak-/Documents/ft_ls_new/src/is_visible.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/is_visible.c.o"
@@ -11,6 +12,16 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/lreznak-/Documents/ft_ls_new/src/ls_files_r.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_files_r.c.o"
   "/Users/lreznak-/Documents/ft_ls_new/src/parse_flags.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/parse_flags.c.o"
   "/Users/lreznak-/Documents/ft_ls_new/src/t_file_new.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/t_file_new.c.o"
+=======
+  "/Users/andrew/Documents/42/ls/src/file_name_cmp.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/file_name_cmp.c.o"
+  "/Users/andrew/Documents/42/ls/src/ft_ls.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ft_ls.c.o"
+  "/Users/andrew/Documents/42/ls/src/is_visible.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/is_visible.c.o"
+  "/Users/andrew/Documents/42/ls/src/ls_dir.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_dir.c.o"
+  "/Users/andrew/Documents/42/ls/src/ls_files_r.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_files_r.c.o"
+  "/Users/andrew/Documents/42/ls/src/parse_flags.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/parse_flags.c.o"
+  "/Users/andrew/Documents/42/ls/src/t_file_new.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/t_file_new.c.o"
+  "/Users/andrew/Documents/42/ls/src/to_list.c" "/Users/andrew/Documents/42/ls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/to_list.c.o"
+>>>>>>> 0cb9204d17582782e47e0ee506608ab85eb76c30
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
