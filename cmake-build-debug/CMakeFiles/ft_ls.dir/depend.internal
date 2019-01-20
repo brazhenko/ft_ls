@@ -4,28 +4,28 @@
 CMakeFiles/ft_ls.dir/src/file_name_cmp.c.o
  .././inc/ft_ls.h
  .././inc/libft.h
- /Users/lreznak-/Documents/ls/src/file_name_cmp.c
+ /Users/andrew/Documents/42/ls/src/file_name_cmp.c
 CMakeFiles/ft_ls.dir/src/ft_ls.c.o
  .././inc/ft_ls.h
  .././inc/libft.h
- /Users/lreznak-/Documents/ls/src/ft_ls.c
+ /Users/andrew/Documents/42/ls/src/ft_ls.c
 CMakeFiles/ft_ls.dir/src/is_visible.c.o
  .././inc/ft_ls.h
  .././inc/libft.h
- /Users/lreznak-/Documents/ls/src/is_visible.c
+ /Users/andrew/Documents/42/ls/src/is_visible.c
 CMakeFiles/ft_ls.dir/src/ls_dir.c.o
  .././inc/ft_ls.h
  .././inc/libft.h
- /Users/lreznak-/Documents/ls/src/ls_dir.c
+ /Users/andrew/Documents/42/ls/src/ls_dir.c
 CMakeFiles/ft_ls.dir/src/ls_files_r.c.o
  .././inc/ft_ls.h
  .././inc/libft.h
- /Users/lreznak-/Documents/ls/src/ls_files_r.c
+ /Users/andrew/Documents/42/ls/src/ls_files_r.c
 CMakeFiles/ft_ls.dir/src/parse_flags.c.o
  .././inc/ft_ls.h
  .././inc/libft.h
- /Users/lreznak-/Documents/ls/src/parse_flags.c
+ /Users/andrew/Documents/42/ls/src/parse_flags.c
 CMakeFiles/ft_ls.dir/src/t_file_new.c.o
  .././inc/ft_ls.h
  .././inc/libft.h
- /Users/lreznak-/Documents/ls/src/t_file_new.c
+ /Users/andrew/Documents/42/ls/src/t_file_new.c

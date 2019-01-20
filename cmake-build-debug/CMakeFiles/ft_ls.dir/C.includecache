@@ -42,31 +42,31 @@ stdlib.h
 stdio.h
 -
 
-/Users/lreznak-/Documents/ls/src/file_name_cmp.c
+/Users/andrew/Documents/42/ls/src/file_name_cmp.c
 ft_ls.h
-/Users/lreznak-/Documents/ls/src/ft_ls.h
+/Users/andrew/Documents/42/ls/src/ft_ls.h
 
-/Users/lreznak-/Documents/ls/src/ft_ls.c
+/Users/andrew/Documents/42/ls/src/ft_ls.c
 ft_ls.h
-/Users/lreznak-/Documents/ls/src/ft_ls.h
+/Users/andrew/Documents/42/ls/src/ft_ls.h
 
-/Users/lreznak-/Documents/ls/src/is_visible.c
+/Users/andrew/Documents/42/ls/src/is_visible.c
 ft_ls.h
-/Users/lreznak-/Documents/ls/src/ft_ls.h
+/Users/andrew/Documents/42/ls/src/ft_ls.h
 
-/Users/lreznak-/Documents/ls/src/ls_dir.c
+/Users/andrew/Documents/42/ls/src/ls_dir.c
 ft_ls.h
-/Users/lreznak-/Documents/ls/src/ft_ls.h
+/Users/andrew/Documents/42/ls/src/ft_ls.h
 
-/Users/lreznak-/Documents/ls/src/ls_files_r.c
+/Users/andrew/Documents/42/ls/src/ls_files_r.c
 ft_ls.h
-/Users/lreznak-/Documents/ls/src/ft_ls.h
+/Users/andrew/Documents/42/ls/src/ft_ls.h
 
-/Users/lreznak-/Documents/ls/src/parse_flags.c
+/Users/andrew/Documents/42/ls/src/parse_flags.c
 ft_ls.h
-/Users/lreznak-/Documents/ls/src/ft_ls.h
+/Users/andrew/Documents/42/ls/src/ft_ls.h
 
-/Users/lreznak-/Documents/ls/src/t_file_new.c
+/Users/andrew/Documents/42/ls/src/t_file_new.c
 ft_ls.h
-/Users/lreznak-/Documents/ls/src/ft_ls.h
+/Users/andrew/Documents/42/ls/src/ft_ls.h
 

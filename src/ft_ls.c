@@ -12,9 +12,45 @@
 
 #include "ft_ls.h"
 
+static void			print_flags(char *flags)
+{
+	int		i;
+
+	i = 'a';
+	while (i < 128)
+	{
+		if (flags[i])
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+		i++;
+	}
+}
+
+
 int		main(int c, char **v)
 {
+	int 		last_flag;
+	char 		*flags;
+	t_list		*args;
 
-	ls_files_r("src");
+	args = NULL;
+	flags = parse_flags(c, v, &last_flag);
+	print_flags(flags);
+	printf("---%d\n", last_flag);
+	if (c == last_flag + 1)
+	{
+		if (flags['R'])
+			ls_files_r(".");
+		else
+			ls_dir(opendir("."), ".");
+	}
+	else
+	{
+		while (last_flag < c)
+		{
+			last_flag++;
+		}
+	}
 	return (0);
 }

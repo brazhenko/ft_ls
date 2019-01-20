@@ -29,7 +29,7 @@ static int			is_flag(char c)
 
 static	int			parse_flag(char *arg, char **flags)
 {
-	if (*arg == '-')
+	if (*arg == '-' && *(arg + 1))
 	{
 		arg++;
 		while (*arg)
@@ -45,13 +45,15 @@ static	int			parse_flag(char *arg, char **flags)
 	return (0);
 }
 
+
 char				*parse_flags(int argc, char **argv, int *last_flag)
 {
 	int		i;
 	char	*flags;
 
 	i = 1;
-	flags = malloc(sizeof(char) * 128);	
+	flags = malloc(sizeof(char) * 128);
+	ft_memset((void *)flags, 0, 128);
 	*last_flag = 0;
 	while (i < argc)
 	{
