@@ -12,6 +12,15 @@
 
 #include "ft_ls.h"
 
+
+//static void bin( int k )
+//{
+//	if (k >= 2)
+//		bin(k / 2);
+//	char n =  k % 2 + '0';
+//	write(1, &n, 1);
+//}
+
 t_file			*ls_dir(DIR *cur_dir, char *full_name)
 {
 	struct dirent	*file;
@@ -25,11 +34,15 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name)
 	}
 	while (file_lst)
 	{
-		printf("--%s        %s", file_lst->name , ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
+		// print_mode(file_lst->dir_stat.st_mode);
+		printf("   ");
+		print_mode(file_lst->dir_stat.st_mode);
+		// bin(file_lst->dir_stat.st_mode);
+		printf(" %hu %s %lld  %s  %s", file_lst->dir_stat.st_nlink , getpwuid(file_lst->dir_stat.st_uid)->pw_name, file_lst->dir_stat.st_size , file_lst->name, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
 		if (!file_lst->prev)
 			return (file_lst);
 		file_lst = file_lst->prev;
 	}
 	printf("\n\n");
-	return (file_lst);	
+	return (file_lst);
 }

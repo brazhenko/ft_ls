@@ -9,6 +9,7 @@ all:
 			$(SRC)/ls_dir.c \
 			$(SRC)/parse_flags.c \
 			$(SRC)/to_list.c \
+			$(SRC)/print_mode.c \
 			libft.a \
 			-I $(INCLUDE) \
 			-o ft_ls
