@@ -312,6 +312,33 @@ src/parse_flags.c.s:
 	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/parse_flags.c.s
 .PHONY : src/parse_flags.c.s
 
+src/print_mode.o: src/print_mode.c.o
+
+.PHONY : src/print_mode.o
+
+# target to build an object file
+src/print_mode.c.o:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/print_mode.c.o
+.PHONY : src/print_mode.c.o
+
+src/print_mode.i: src/print_mode.c.i
+
+.PHONY : src/print_mode.i
+
+# target to preprocess a source file
+src/print_mode.c.i:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/print_mode.c.i
+.PHONY : src/print_mode.c.i
+
+src/print_mode.s: src/print_mode.c.s
+
+.PHONY : src/print_mode.s
+
+# target to generate assembly for a file
+src/print_mode.c.s:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/print_mode.c.s
+.PHONY : src/print_mode.c.s
+
 src/t_file_new.o: src/t_file_new.c.o
 
 .PHONY : src/t_file_new.o
@@ -396,6 +423,9 @@ help:
 	@echo "... src/parse_flags.o"
 	@echo "... src/parse_flags.i"
 	@echo "... src/parse_flags.s"
+	@echo "... src/print_mode.o"
+	@echo "... src/print_mode.i"
+	@echo "... src/print_mode.s"
 	@echo "... src/t_file_new.o"
 	@echo "... src/t_file_new.i"
 	@echo "... src/t_file_new.s"

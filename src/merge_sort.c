@@ -9,7 +9,9 @@
 /*   Updated: 2019/01/19 06:09:42 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 #include "ft_ls.h"
 
 //struct s_file
@@ -20,7 +22,7 @@
 
 //static int 		data_comparator(t_file *left, t_file *right)
 //{
-//	if (left->data < right->data)
+//	if (left->data > right->data)
 //		return (1);
 //	else
 //		return (0);
@@ -59,12 +61,14 @@ struct s_file *merge(struct s_file *first, struct s_file *second, int (*f)(t_fil
 
 // A utility function to insert a new node at the
 // beginning of doubly linked list
-void insert(struct s_file **head, int data)
+void insert(struct s_file **head, int data, char *name, char *full_name)
 {
 	struct s_file *temp =
 			(struct s_file *)malloc(sizeof(struct s_file));
 	temp->data = data;
 	temp->next = temp->prev = NULL;
+	temp->name = name;
+	stat(ft_strjoin(ft_strjoin(full_name, "/"), name), &temp->dir_stat);
 	if (!(*head))
 		(*head) = temp;
 	else
@@ -133,18 +137,42 @@ struct s_file *mergeSort(struct s_file *head, int (*f)(t_file *, t_file *))
 	return merge(head,second, f);
 }
 
-// Driver program
+ //Driver program
+
 //int main(void)
 //{
 //	struct s_file *head = NULL;
-//	insert(&head,5);
-//	insert(&head,20);
-//	insert(&head,4);
-//	insert(&head,3);
-//	insert(&head,30);
-//	insert(&head,10);
+//	insert(&head,30, NULL, NULL);
+//	insert(&head,5, NULL, NULL);
+//	insert(&head,20, NULL, NULL);
+//	insert(&head,4, NULL, NULL);
+//	insert(&head,3, NULL, NULL);
+//	insert(&head,10, NULL, NULL);
+//	insert(&head,30, NULL, NULL);
+//	insert(&head,5, NULL, NULL);
+//	insert(&head,20, NULL, NULL);
+//	insert(&head,4, NULL, NULL);
+//	insert(&head,3, NULL, NULL);
+//	insert(&head,10, NULL, NULL);
+//	insert(&head,30, NULL, NULL);
+//	insert(&head,5, NULL, NULL);
+//	insert(&head,20, NULL, NULL);
+//	insert(&head,4, NULL, NULL);
+//	insert(&head,3, NULL, NULL);
+//	insert(&head,10, NULL, NULL);
+//	insert(&head,30, NULL, NULL);
+//	insert(&head,5, NULL, NULL);
+//	insert(&head,20, NULL, NULL);
+//	insert(&head,4, NULL, NULL);
+//	insert(&head,3, NULL, NULL);
+//	insert(&head,10, NULL, NULL);
+//
+//	print(head);
+//	printf("\n___________________________");
+//
 //	head = mergeSort(head, &data_comparator);
 //	printf("\n\nLinked List after sorting\n");
 //	print(head);
 //	return 0;
 //}
+

@@ -14,8 +14,6 @@
 
 t_file			*to_list(struct dirent *file, char *name, char *full_name, t_file *list)
 {
-
-
 	while (list && list->next)
 		list = list->next;
 	t_file *node = t_file_new(file, name, full_name);
@@ -24,3 +22,4 @@ t_file			*to_list(struct dirent *file, char *name, char *full_name, t_file *list
 		list->next = node;
 	return (node);
 }
+

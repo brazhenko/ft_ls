@@ -1,0 +1,45 @@
+rwxr-xr-xrwx------rwxr-xr-xrw-r--r--rwxr-xr-xrwxr-xr-xrwxrwxrwxrw-r--r--rw-r--r--rwxr-xr-xrwxr-xr-xrwxr-xr-xrwxr-xr-xrw-r--r--rwxr-xr-xrw-r--r--rwxr-xr-xrw-r--r--rw-r--r--rw-r--r--rwxr-xr-x.
+ 21 lreznak- 714  .  Tue Jan 22 10:31:14 2019
+  25 lreznak- 850  ..  Sun Jan 20 23:19:58 2019
+  16 lreznak- 544  .git  Tue Jan 22 10:31:32 2019
+  1 lreznak- 487  .gitignore  Sun Jan 20 19:42:50 2019
+  10 lreznak- 340  .idea  Tue Jan 22 10:29:19 2019
+  5 lreznak- 170  .vscode  Sun Jan 20 19:42:50 2019
+  1 lreznak- 454  CMakeLists.txt  Tue Jan 22 09:02:33 2019
+  1 lreznak- 365  Makefile  Tue Jan 22 10:25:19 2019
+  1 lreznak- 7  README.md  Sun Jan 20 19:42:50 2019
+  1 lreznak- 8736  a.out  Tue Jan 22 09:42:54 2019
+  9 lreznak- 306  cmake-build-debug  Tue Jan 22 09:26:43 2019
+  1 lreznak- 16480  ft_ls  Tue Jan 22 10:25:21 2019
+  3 lreznak- 102  ft_ls.dSYM  Sun Jan 20 19:43:24 2019
+  1 lreznak- 0  ids  Tue Jan 22 04:10:18 2019
+  4 lreznak- 136  inc  Tue Jan 22 09:38:42 2019
+  1 lreznak- 76840  libft.a  Sun Jan 20 19:42:50 2019
+  13 lreznak- 442  src  Tue Jan 22 10:24:26 2019
+  1 lreznak- 2495  test  Tue Jan 22 10:30:57 2019
+  1 lreznak- 171  test.c  Tue Jan 22 03:52:08 2019
+  1 lreznak- 1217  testfile  Tue Jan 22 10:31:28 2019
+  26 lreznak- 884  trash  Sun Jan 20 19:42:50 2019
+ total 312
+drwxr-xr-x  22 lreznak-  2018    748 Jan 22 10:33 .
+drwx------  25 lreznak-  2018    850 Jan 20 23:19 ..
+drwxr-xr-x  16 lreznak-  2018    544 Jan 22 10:33 .git
+-rw-r--r--   1 lreznak-  2018    487 Jan 20 19:42 .gitignore
+drwxr-xr-x  10 lreznak-  2018    340 Jan 22 10:33 .idea
+drwxr-xr-x   5 lreznak-  2018    170 Jan 20 19:42 .vscode
+-rwxrwxrwx   1 lreznak-  2018    454 Jan 22 09:02 CMakeLists.txt
+-rw-r--r--   1 lreznak-  2018    365 Jan 22 10:25 Makefile
+-rw-r--r--   1 lreznak-  2018      7 Jan 20 19:42 README.md
+-rwxr-xr-x   1 lreznak-  2018   8736 Jan 22 09:42 a.out
+drwxr-xr-x   9 lreznak-  2018    306 Jan 22 09:26 cmake-build-debug
+-rwxr-xr-x   1 lreznak-  2018  16480 Jan 22 10:25 ft_ls
+drwxr-xr-x   3 lreznak-  2018    102 Jan 20 19:43 ft_ls.dSYM
+-rw-r--r--   1 lreznak-  2018      0 Jan 22 04:10 ids
+drwxr-xr-x   4 lreznak-  2018    136 Jan 22 09:38 inc
+-rw-r--r--   1 lreznak-  2018  76840 Jan 20 19:42 libft.a
+-rw-r--r--   1 lreznak-  2018  18410 Jan 22 10:32 lsman
+drwxr-xr-x  13 lreznak-  2018    442 Jan 22 10:24 src
+-rw-r--r--   1 lreznak-  2018   2495 Jan 22 10:30 test
+-rw-r--r--   1 lreznak-  2018    171 Jan 22 03:52 test.c
+-rw-r--r--   1 lreznak-  2018   1281 Jan 22 10:33 testfile
+drwxr-xr-x  26 lreznak-  2018    884 Jan 20 19:42 trash

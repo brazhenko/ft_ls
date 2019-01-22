@@ -21,11 +21,17 @@ CMakeFiles/ft_ls.dir/src/ls_files_r.c.o: .././inc/ft_ls.h
 CMakeFiles/ft_ls.dir/src/ls_files_r.c.o: .././inc/libft.h
 CMakeFiles/ft_ls.dir/src/ls_files_r.c.o: ../src/ls_files_r.c
 
+CMakeFiles/ft_ls.dir/src/merge_sort.c.o: .././inc/ft_ls.h
+CMakeFiles/ft_ls.dir/src/merge_sort.c.o: .././inc/libft.h
 CMakeFiles/ft_ls.dir/src/merge_sort.c.o: ../src/merge_sort.c
 
 CMakeFiles/ft_ls.dir/src/parse_flags.c.o: .././inc/ft_ls.h
 CMakeFiles/ft_ls.dir/src/parse_flags.c.o: .././inc/libft.h
 CMakeFiles/ft_ls.dir/src/parse_flags.c.o: ../src/parse_flags.c
+
+CMakeFiles/ft_ls.dir/src/print_mode.c.o: .././inc/ft_ls.h
+CMakeFiles/ft_ls.dir/src/print_mode.c.o: .././inc/libft.h
+CMakeFiles/ft_ls.dir/src/print_mode.c.o: ../src/print_mode.c
 
 CMakeFiles/ft_ls.dir/src/t_file_new.c.o: .././inc/ft_ls.h
 CMakeFiles/ft_ls.dir/src/t_file_new.c.o: .././inc/libft.h

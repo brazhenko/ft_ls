@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_ls.dir/src/ls_files_r.c.o"
   "CMakeFiles/ft_ls.dir/src/merge_sort.c.o"
   "CMakeFiles/ft_ls.dir/src/parse_flags.c.o"
+  "CMakeFiles/ft_ls.dir/src/print_mode.c.o"
   "CMakeFiles/ft_ls.dir/src/t_file_new.c.o"
   "CMakeFiles/ft_ls.dir/src/to_list.c.o"
   "ft_ls.pdb"

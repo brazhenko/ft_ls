@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/lreznak-/Documents/ft_ls_new/src/ls_files_r.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_files_r.c.o"
   "/Users/lreznak-/Documents/ft_ls_new/src/merge_sort.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/merge_sort.c.o"
   "/Users/lreznak-/Documents/ft_ls_new/src/parse_flags.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/parse_flags.c.o"
+  "/Users/lreznak-/Documents/ft_ls_new/src/print_mode.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/print_mode.c.o"
   "/Users/lreznak-/Documents/ft_ls_new/src/t_file_new.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/t_file_new.c.o"
   "/Users/lreznak-/Documents/ft_ls_new/src/to_list.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/to_list.c.o"
   )

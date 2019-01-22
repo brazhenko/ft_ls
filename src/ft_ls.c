@@ -35,8 +35,8 @@ int		main(int c, char *v[])
 
 	args = NULL;
 	flags = parse_flags(c, v, &last_flag);
-	print_flags(flags);
-	printf("---%d\n", last_flag);
+	// print_flags(flags);
+	// printf("---%d\n", last_flag);
 	if (c == last_flag + 1)
 	{
 		if (flags['R'])

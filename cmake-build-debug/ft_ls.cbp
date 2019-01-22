@@ -103,6 +103,9 @@
 		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/parse_flags.c">
 			<Option target="ft_ls"/>
 		</Unit>
+		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/print_mode.c">
+			<Option target="ft_ls"/>
+		</Unit>
 		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/t_file_new.c">
 			<Option target="ft_ls"/>
 		</Unit>

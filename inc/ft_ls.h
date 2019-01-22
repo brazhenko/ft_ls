@@ -54,5 +54,6 @@ t_file				*to_list(struct dirent *file, char *name, \
                                         char *full_name, t_file *list);
 void 				print_mode(int mode);
 struct				s_file *mergeSort(struct s_file *head, int (*f)(t_file *, t_file *));
+void 				insert(struct s_file **head, int data, char *name, char *full_name);
 
 #endif

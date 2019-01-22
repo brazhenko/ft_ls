@@ -17,5 +17,5 @@ include_directories(./inc/)
 #set_target_properties(myLogicalExtLib PROPERTIES IMPORTED_LOCATION "/Users/lreznak-/Documents/ls/libft.a")
 
 
-add_executable(ft_ls ${FT_LS_SRC} src/to_list.c src/merge_sort.c)
+add_executable(ft_ls ${FT_LS_SRC} src/to_list.c src/merge_sort.c src/print_mode.c)
 target_link_libraries(ft_ls "/Users/lreznak-/Documents/ls/libft.a")
