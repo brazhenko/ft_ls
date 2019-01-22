@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "ft_ls.h": "c"
+        "ft_ls.h": "c",
+        "uuid.h": "c"
     }
 }

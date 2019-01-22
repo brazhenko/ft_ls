@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/22 16:20:26 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 16:42:44 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int insert(struct s_file **head, char *name, char *full_name, t_all *all)
 		all->len_count_sym = ft_strlen(ft_itoa(temp->dir_stat.st_nlink));
 	if (all->len_name < ft_strlen(getpwuid(temp->dir_stat.st_uid)->pw_name))
 		all->len_name = ft_strlen(getpwuid(temp->dir_stat.st_uid)->pw_name);
+	if (all->len_ves < ft_strlen(ft_itoa(temp->dir_stat.st_size)))
+		all->len_ves = ft_strlen(ft_itoa(temp->dir_stat.st_size));
 	// </вычисление максимальной длинны>
 	if (temp->name[0] == '.' && !all->flags['a'])
 		total = 0;
