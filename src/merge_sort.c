@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   merge_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 06:09:42 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 15:47:03 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include <time.h>
 #include <stdlib.h>
 #include "ft_ls.h"
@@ -61,14 +61,20 @@ struct s_file *merge(struct s_file *first, struct s_file *second, int (*f)(t_fil
 
 // A utility function to insert a new node at the
 // beginning of doubly linked list
-void insert(struct s_file **head, int data, char *name, char *full_name)
+int insert(struct s_file **head, char *name, char *full_name, t_all *all)
 {
+	int		total;
+
+	//тут был пункт temp->data = 5, убрал его нахуй, вообще не понимаю зачем он нужен был(
 	struct s_file *temp =
 			(struct s_file *)malloc(sizeof(struct s_file));
-	temp->data = data;
 	temp->next = temp->prev = NULL;
 	temp->name = name;
 	stat(ft_strjoin(ft_strjoin(full_name, "/"), name), &temp->dir_stat);
+	if (temp->name[0] == '.' && !all->flags['a'])
+		total = 0;
+	else
+		total = temp->dir_stat.st_blocks;
 	if (!(*head))
 		(*head) = temp;
 	else
@@ -77,6 +83,7 @@ void insert(struct s_file **head, int data, char *name, char *full_name)
 		(*head)->prev = temp;
 		(*head) = temp;
 	}
+	return total;
 }
 
 // A utility function to print a doubly linked list in
@@ -175,4 +182,3 @@ struct s_file *mergeSort(struct s_file *head, int (*f)(t_file *, t_file *))
 //	print(head);
 //	return 0;
 //}
-

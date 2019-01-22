@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 05:58:45 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 15:50:13 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,20 @@ int		main(int c, char *v[])
 	int 			last_flag;
 	char 			*flags;
 	t_file			*args;
+	t_all			*all;
 
+	all = malloc(sizeof(t_all*));
 	args = NULL;
 	flags = parse_flags(c, v, &last_flag);
+	all->flags = flags;
 	// print_flags(flags);
 	// printf("---%d\n", last_flag);
 	if (c == last_flag + 1)
 	{
 		if (flags['R'])
-			ls_files_r(".");
+			ls_files_r(".", all);
 		else
-			ls_dir(opendir("."), ".");
+			ls_dir(opendir("."), ".", all);
 	}
 	else
 	{
