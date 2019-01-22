@@ -3,6 +3,13 @@
 //
 
 #include "ft_ls.h"
+static void bin( int k )
+{
+	if (k >= 2)
+		bin(k / 2);
+	char n =  k % 2 + '0';
+	write(1, &n, 1);
+}
 
 void 		print_mode(int mode)
 {
@@ -18,7 +25,12 @@ void 		print_mode(int mode)
 //	ft_putchar('r' * (mode & 4 / 4) + '-' * !(mode & 4 / 4));
 //	ft_putchar('w' * (mode & 2 / 2) + '-' * !(mode & 2 / 2));
 //	ft_putchar('x' * (mode & 1 / 1) + '-' * !(mode & 1 / 1));
-
+//	bin(mode);
+//	puts("            ");
+	if (S_ISDIR(mode))
+		write(1, "d", 1);
+	else
+		write(1, "-", 1);
 	if (mode & 256)
 		write(1, "r", 1);
 	else
@@ -30,7 +42,6 @@ void 		print_mode(int mode)
 		write(1, "-", 1);
 	if (mode & 64)
 		write(1, "x", 1);
-
 	else
 		write(1, "-", 1);
 	if (mode & 32)
