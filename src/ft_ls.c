@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/22 18:18:12 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 20:15:38 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		main(int c, char *v[])
 			args = to_list(NULL, v[last_flag], v[last_flag], args);
 			last_flag++;
 		}
-		//printf("_______________________\n");
+		printf("_______________________\n");
 		while (args)
 		{
 			printf("%s\n", args->name);
