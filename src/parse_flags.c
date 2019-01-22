@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/19 03:26:03 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 05:44:55 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 18:34:40 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,18 @@ static int			is_flag(char c)
 	return (0);
 }
 
+void				conflict(char c, char **flags)
+{
+	if (c == 'd')
+		(*flags)[((int)'R')] = 0;
+	if (c == 'f')
+	{
+		(*flags)[((int)'r')] = 0;
+		(*flags)[((int)'t')] = 0;
+		(*flags)[((int)'a')] = 1;
+	}
+}
+
 static	int			parse_flag(char *arg, char **flags)
 {
 	if (*arg == '-' && *(arg + 1))
@@ -34,6 +46,7 @@ static	int			parse_flag(char *arg, char **flags)
 		arg++;
 		while (*arg)
 		{
+			conflict(*arg, flags); // добавил только 2 конфликта (больше пока не нашёл, найдёшь - впиши)
 			if (is_flag(*arg))
 				(*flags)[((int)*arg)] = 1;
 			else
