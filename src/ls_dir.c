@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/22 12:58:44 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 13:15:05 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name) {
 	while (file_lst)
 	{
 		print_mode(file_lst->dir_stat.st_mode);
-		printf(" %hu %s %lld  %s  %s", file_lst->dir_stat.st_nlink, getpwuid(file_lst->dir_stat.st_uid)->pw_name,
-			   file_lst->dir_stat.st_size, file_lst->name, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
+		printf(" %hu %s %lld  %s %lld %s ", file_lst->dir_stat.st_nlink, getpwuid(file_lst->dir_stat.st_uid)->pw_name,
+			   file_lst->dir_stat.st_size, file_lst->name, file_lst->dir_stat.st_blocks, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
 		file_lst = file_lst->next;
 	}
 	return (cpy);
