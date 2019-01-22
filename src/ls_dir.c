@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/22 18:59:22 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 19:22:48 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int		comparator_r(t_file *left, t_file *right)
 	}
 	else
 		return (0);
+}
+
+int		comparator_f(t_file *left, t_file *right)
+{
+	return (0);
 }
 
 void	printf_len_str(char *str, int n)
@@ -113,7 +118,9 @@ t_file			*config_compare(t_file	*file_lst, t_all *all)
 {
 	if (all->flags['r'])
 		return mergeSort(file_lst, &comparator_r);
-	else	
+	else if (all->flags['f'])
+		return mergeSort(file_lst, &comparator_f);
+	else
 		return mergeSort(file_lst, &comparator_classic);
 }
 
@@ -140,7 +147,8 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all) {
 		{
 			print_mode(file_lst->dir_stat.st_mode);
 			printf_len_hu_num(file_lst->dir_stat.st_nlink, all->len_count_sym);
-			printf_len_str(getpwuid(file_lst->dir_stat.st_uid)->pw_name, all->len_name);
+			if (!(all->flags['g']))
+				printf_len_str(getpwuid(file_lst->dir_stat.st_uid)->pw_name, all->len_name);
 			printf_len_str(getgrgid(file_lst->dir_stat.st_gid)->gr_name, all->len_gr);
 			printf_len_llnum(file_lst->dir_stat.st_size, all->len_ves);
 			if (all->flags['u'])
