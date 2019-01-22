@@ -21,24 +21,35 @@
 //	write(1, &n, 1);
 //}
 
-t_file			*ls_dir(DIR *cur_dir, char *full_name)
+static int		name_comparator(t_file *left, t_file *right)
 {
-	struct dirent	*file;
-	t_file			*file_lst = NULL;
-	
+	if (ft_strcmp(left->name, right->name) > 0)
+		return (1);
+	return (0);
+}
+
+t_file			*ls_dir(DIR *cur_dir, char *full_name) {
+	struct dirent *file;
+	t_file *file_lst = NULL;
+
 	printf("! %s\n", full_name);
 	while ((file = readdir(cur_dir)))
 	{
 		file_lst = to_list(file, file->d_name, full_name, file_lst);
 		//printf("write.. %s\n", file_lst->name);
 	}
+	while (file_lst && file_lst->prev)
+	{
+		file_lst = file_lst->prev;
+	}
+	mergeSort(file_lst, &name_comparator);
 	while (file_lst)
 	{
-		// print_mode(file_lst->dir_stat.st_mode);
-		printf("   ");
+		// printf("   ");
 		print_mode(file_lst->dir_stat.st_mode);
 		// bin(file_lst->dir_stat.st_mode);
-		printf(" %hu %s %lld  %s  %s", file_lst->dir_stat.st_nlink , getpwuid(file_lst->dir_stat.st_uid)->pw_name, file_lst->dir_stat.st_size , file_lst->name, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
+		printf(" %hu %s %lld  %s  %s", file_lst->dir_stat.st_nlink, getpwuid(file_lst->dir_stat.st_uid)->pw_name,
+			   file_lst->dir_stat.st_size, file_lst->name, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
 		if (!file_lst->prev)
 			return (file_lst);
 		file_lst = file_lst->prev;

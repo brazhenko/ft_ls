@@ -10,19 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//include "ft_ls.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "ft_ls.h"
 
-struct s_file
-{
-	int data;
-	struct s_file *next, *prev;
-};
+//struct s_file
+//{
+//	int data;
+//	struct s_file *next, *prev;
+//};
+
+//static int 		data_comparator(t_file *left, t_file *right)
+//{
+//	if (left->data < right->data)
+//		return (1);
+//	else
+//		return (0);
+//}
 
 struct s_file *split(struct s_file *head);
 
-struct s_file *merge(struct s_file *first, struct s_file *second)
+struct s_file *merge(struct s_file *first, struct s_file *second, int (*f)(t_file *, t_file *))
 {
 	// If first linked list is empty
 	if (!first)
@@ -33,16 +39,16 @@ struct s_file *merge(struct s_file *first, struct s_file *second)
 		return first;
 
 	// Pick the smaller value
-	if (first->data < second->data)
+	if (f(first, second))
 	{
-		first->next = merge(first->next,second);
+		first->next = merge(first->next,second, f);
 		first->next->prev = first;
 		first->prev = NULL;
 		return first;
 	}
 	else
 	{
-		second->next = merge(first,second->next);
+		second->next = merge(first,second->next, f);
 		second->next->prev = second;
 		second->prev = NULL;
 		return second;
@@ -113,32 +119,32 @@ struct s_file *split(struct s_file *head)
 }
 
 // Function to do merge sort
-struct s_file *mergeSort(struct s_file *head)
+struct s_file *mergeSort(struct s_file *head, int (*f)(t_file *, t_file *))
 {
 	if (!head || !head->next)
 		return head;
 	struct s_file *second = split(head);
 
 	// Recur for left and right halves
-	head = mergeSort(head);
-	second = mergeSort(second);
+	head = mergeSort(head, f);
+	second = mergeSort(second, f);
 
 	// Merge the two sorted halves
-	return merge(head,second);
+	return merge(head,second, f);
 }
 
 // Driver program
-int main(void)
-{
-	struct s_file *head = NULL;
-	insert(&head,5);
-	insert(&head,20);
-	insert(&head,4);
-	insert(&head,3);
-	insert(&head,30);
-	insert(&head,10);
-	head = mergeSort(head);
-	printf("\n\nLinked List after sorting\n");
-	print(head);
-	return 0;
-}
+//int main(void)
+//{
+//	struct s_file *head = NULL;
+//	insert(&head,5);
+//	insert(&head,20);
+//	insert(&head,4);
+//	insert(&head,3);
+//	insert(&head,30);
+//	insert(&head,10);
+//	head = mergeSort(head, &data_comparator);
+//	printf("\n\nLinked List after sorting\n");
+//	print(head);
+//	return 0;
+//}

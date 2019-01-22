@@ -10,6 +10,7 @@ all:
 			$(SRC)/parse_flags.c \
 			$(SRC)/to_list.c \
 			$(SRC)/print_mode.c \
+			$(SRC)/merge_sort.c \
 			libft.a \
 			-I $(INCLUDE) \
 			-o ft_ls

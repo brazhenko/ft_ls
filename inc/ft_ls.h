@@ -53,5 +53,6 @@ void				add_to_lst(t_file **lst, t_file *node);
 t_file				*to_list(struct dirent *file, char *name, \
                                         char *full_name, t_file *list);
 void 				print_mode(int mode);
+struct				s_file *mergeSort(struct s_file *head, int (*f)(t_file *, t_file *));
 
 #endif
