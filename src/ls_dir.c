@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/22 20:36:50 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 21:33:11 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,24 @@ int		comparator_r(t_file *left, t_file *right)
 	// if (left->data > right->data)
 	if (ft_strcmp(left->name, right->name) > 0)
 	{
-		// sprintf("1");
 		return (1);
 	}
+	else
+		return (0);
+}
+
+int		comparator_tu(t_file *left, t_file *right)
+{
+	if (left->dir_stat.st_atimespec.tv_sec > right->dir_stat.st_atimespec.tv_sec)
+		return (1);
+	else
+		return (0);
+}
+
+int		comparator_t(t_file *left, t_file *right)
+{
+	if (left->dir_stat.st_ctimespec.tv_sec > right->dir_stat.st_ctimespec.tv_sec)
+		return (1);
 	else
 		return (0);
 }
@@ -130,11 +145,19 @@ t_file			*config_compare(t_file	*file_lst, t_all *all)
 		return mergeSort(file_lst, &comparator_r);
 	else if (all->flags['f'])
 		return mergeSort(file_lst, &comparator_f);
+	else if (all->flags['t'])
+	{
+		if (all->flags['u'])
+			return mergeSort(file_lst, &comparator_tu);
+		else
+			return mergeSort(file_lst, &comparator_t);
+	}
 	else
 		return mergeSort(file_lst, &comparator_classic);
 }
 
-t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all) {
+t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all) 
+{
 	struct dirent	*file;
 	t_file			*file_lst = NULL;
 	int				total = 0;
