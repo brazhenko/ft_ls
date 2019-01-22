@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/22 16:41:58 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 17:30:20 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct				s_all
 	char					*flags;
 	int						len_count_sym;
 	int						len_name;
+	int						len_gr;
 	int						len_ves;
 }							t_all;
 

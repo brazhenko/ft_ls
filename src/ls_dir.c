@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/22 17:24:09 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/01/22 17:41:49 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	printf_len_str(char *str, int n)
 
 	i = n - ft_strlen(str);
 	while (i--)
-		printf("%s", " ");
+		printf("%s", "-");
 	printf(" %s", str);
 }
 
@@ -101,6 +101,7 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all) {
 	all->len_count_sym = 0;
 	all->len_name = 0;
 	all->len_ves = 0;
+	all->len_gr = 0;
 	while ((file = readdir(cur_dir)))
 	{
 		total += insert(&file_lst,file->d_name, full_name, all);
@@ -114,6 +115,7 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all) {
 		print_mode(file_lst->dir_stat.st_mode);
 		printf_len_hu_num(file_lst->dir_stat.st_nlink, all->len_count_sym);
 		printf_len_str(getpwuid(file_lst->dir_stat.st_uid)->pw_name, all->len_name);
+		printf_len_str(getgrgid(file_lst->dir_stat.st_gid)->gr_name, all->len_gr);
 		printf_len_llnum(file_lst->dir_stat.st_size, all->len_ves);
 		printf(" %s %s\n", cut_time(ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec)), file_lst->name);
 		//printf(" %s %lld %s", file_lst->name, file_lst->dir_stat.st_blocks, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
