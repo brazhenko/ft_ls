@@ -13,13 +13,6 @@
 #include "ft_ls.h"
 
 
-//static void bin( int k )
-//{
-//	if (k >= 2)
-//		bin(k / 2);
-//	char n =  k % 2 + '0';
-//	write(1, &n, 1);
-//}
 
 //static int		name_comparator(t_file *left, t_file *right)
 //{
