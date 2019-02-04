@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/01/22 21:33:11 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 00:42:46 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,9 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 		// printf("write.. %s\n", file->d_name);
 	}
 	if (all->flags['l'])
-		printf("Total: %d\n", total);
+	{
+		printf("\n%s\nTotal: %d\n", full_name, total);
+	}
 	file_lst = config_compare(file_lst, all);
 	t_file *cpy = file_lst;
 	while (file_lst)
