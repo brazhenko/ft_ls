@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 06:40:56 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 06:55:04 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,14 @@ static void			print_flags(char *flags)
 
 void	cont_stat(t_file *file, t_all *all)
 {
-	all
+	t_file *dump;
+
+	insert_file(all);
+	dump = file;
+	while (file)
+	{
+		file=file->next;
+	}
 }
 
 int		main(int c, char *v[])
