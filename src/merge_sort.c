@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 05:08:54 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 06:37:52 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ struct s_file *merge(struct s_file *first, struct s_file *second, int (*f)(t_fil
 	}
 }
 
-void	 insert_file(struct s_file **head, char *name, char *full_name, t_all *all)
+void	 insert_file(t_all *all)
 {
 	// (*head)->blocks = 0;
 	// (*head)->blocks_a = 0;

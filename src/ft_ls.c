@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 05:29:58 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 06:40:56 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void				ls_only_file(t_file *file_lst, t_all *all)
 {
 	if (!file_lst->is_exist)
 		return ;
-	insert_file(&file_lst, file_lst->name, ".", all);
 	if (all->flags['a'] || (!all->flags['a'] && file_lst->name[0] != '.'))
 	{
 		if (all->flags['l'])
@@ -67,6 +66,11 @@ static void			print_flags(char *flags)
 			write(1, "0", 1);
 		i++;
 	}
+}
+
+void	cont_stat(t_file *file, t_all *all)
+{
+	all
 }
 
 int		main(int c, char *v[])
@@ -118,6 +122,7 @@ int		main(int c, char *v[])
 				ls_only_file(args, all);
 			args = args->next;
 		}
+		cont_stat(args_cpy, all);
 		while (args_cpy)
 		{
 			if (S_ISDIR(args_cpy->dir_stat.st_mode))
