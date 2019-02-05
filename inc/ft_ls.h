@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 06:37:16 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 08:33:11 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void				add_to_lst(t_file **lst, t_file *node);
 t_file				*to_list(struct dirent *file, char *name, 		\
 					char *full_name, t_file *list);
 void				print_mode(int mode);
-struct				s_file *mergeSort(struct s_file *head, int (*f)(t_file *, t_file *));
+struct				s_file *merge_sort(struct s_file *head, int (*f)(t_file *, t_file *));
 int					insert(struct s_file **head, char *name, char *full_name, t_all *all);
 int					comparator_classic(t_file *left, t_file *right);
 void                t_file_del(t_file *node);
@@ -79,8 +79,11 @@ char				*cut_time(char *str);
 void				printf_len_post_str(char *str, int n);
 int					insert(struct s_file **head, char *name, char *full_name, t_all *all);
 void				insert_file(t_all *all);
-
-
+int					comparator_classic(t_file *left, t_file *right);
+int					comparator_r(t_file *left, t_file *right);
+int					comparator_tu(t_file *left, t_file *right);
+int					comparator_t(t_file *left, t_file *right);
+int					comparator_f(t_file *left, t_file *right);
 
 
 #endif

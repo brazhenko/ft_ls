@@ -11,6 +11,7 @@ all:
 			$(SRC)/to_list.c \
 			$(SRC)/print_mode.c \
 			$(SRC)/merge_sort.c \
+			$(SRC)/comparators.c \
 			libft.a \
 			-I $(INCLUDE) \
 			-o ft_ls
