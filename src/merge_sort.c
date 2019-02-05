@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/22 20:28:47 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 05:08:54 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,20 @@ struct s_file *merge(struct s_file *first, struct s_file *second, int (*f)(t_fil
 	}
 }
 
-
+void	 insert_file(struct s_file **head, char *name, char *full_name, t_all *all)
+{
+	// (*head)->blocks = 0;
+	// (*head)->blocks_a = 0;
+	// (*head)->data = 0;
+	// (*head)->dir_dirent = NULL;
+	// (*head)->dir_stat = NULL;
+	// (*head)->dir_struct = NULL;
+	all->len_count_sym = 0;
+	all->len_gr = 0;
+	all->len_name = 0;
+	all->len_namef = 0;
+	all->len_ves = 0;
+}
 
 // A utility function to insert a new node at the
 // beginning of doubly linked list

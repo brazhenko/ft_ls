@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 04:51:01 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 05:29:58 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,9 @@ void				ls_error(char *file_name, int n)
 
 void				ls_only_file(t_file *file_lst, t_all *all)
 {
- 	if (S_ISDIR(file_lst->dir_stat.st_mode))
-	{
-		ls_dir(opendir(file_lst->name), file_lst->name, all);
-	}
-	insert(&file_lst, file_lst->name, ".", all);
+	if (!file_lst->is_exist)
+		return ;
+	insert_file(&file_lst, file_lst->name, ".", all);
 	if (all->flags['a'] || (!all->flags['a'] && file_lst->name[0] != '.'))
 	{
 		if (all->flags['l'])
@@ -84,7 +82,7 @@ int		main(int c, char *v[])
 	flags = parse_flags(c, v, &last_flag);
 	all->flags = flags;
 	// print_flags(flags);
-	printf("---%d\n", last_flag);
+	// printf("---%d\n", last_flag);
 	if (c == last_flag + 1)
 	{
 		if (flags['R'])
@@ -94,8 +92,7 @@ int		main(int c, char *v[])
 	}
 	else
 	{
-		if (last_flag == 0)
-			last_flag++;
+		last_flag++;
 		while (last_flag < c)
 		{
 			args = to_list(NULL, v[last_flag], ".", args);
@@ -114,11 +111,21 @@ int		main(int c, char *v[])
 		}
 		args = config_compare(args_cpy, all);
 		args = to_first(args);
+		args_cpy = args;
 		while (args)
 		{
-			if (args->name[0] != '-')
+			if (!(S_ISDIR(args->dir_stat.st_mode)))
 				ls_only_file(args, all);
 			args = args->next;
+		}
+		while (args_cpy)
+		{
+			if (S_ISDIR(args_cpy->dir_stat.st_mode))
+			{
+				printf("\n%s:\n", args_cpy->name);
+				ls_dir(opendir(args_cpy->name), args_cpy->name, all);
+			}
+			args_cpy = args_cpy->next;
 		}
 	}
 	return (0);
