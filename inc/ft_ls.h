@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 08:33:11 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 08:42:08 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,10 @@ int					comparator_r(t_file *left, t_file *right);
 int					comparator_tu(t_file *left, t_file *right);
 int					comparator_t(t_file *left, t_file *right);
 int					comparator_f(t_file *left, t_file *right);
+void				printf_len_str(char *str, int n);
+void				printf_len_post_str(char *str, int n);
+void				printf_len_llnum(long long int num, int n);
+void				printf_len_hu_num(unsigned short int num, int n);
 
 
 #endif
