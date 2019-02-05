@@ -95,6 +95,29 @@ void				cont_stat(t_file *file, t_all *all)
 	file = dump;
 }
 
+void arg_parse(t_file *args, t_all *all, t_file *args_cpy)
+{
+	args = config_compare(args_cpy, all);
+	args = to_first(args);
+	args_cpy = args;
+	cont_stat(args_cpy, all);
+	while (args)
+		{
+			if (!(S_ISDIR(args->dir_stat.st_mode)))
+				ls_only_file(args, all);
+			args = args->next;
+		}
+	while (args_cpy)
+		{
+			if (S_ISDIR(args_cpy->dir_stat.st_mode))
+			{
+				printf("\n%s:\n", args_cpy->name);
+				ls_dir(opendir(args_cpy->name), args_cpy->name, all);
+			}
+			args_cpy = args_cpy->next;
+		}
+}
+
 int					main(int c, char *v[])
 {
 	int				last_flag;
@@ -133,25 +156,7 @@ int					main(int c, char *v[])
 			}
 			args = args->next;
 		}
-		args = config_compare(args_cpy, all);
-		args = to_first(args);
-		args_cpy = args;
-		cont_stat(args_cpy, all);
-		while (args)
-		{
-			if (!(S_ISDIR(args->dir_stat.st_mode)))
-				ls_only_file(args, all);
-			args = args->next;
-		}
-		while (args_cpy)
-		{
-			if (S_ISDIR(args_cpy->dir_stat.st_mode))
-			{
-				printf("\n%s:\n", args_cpy->name);
-				ls_dir(opendir(args_cpy->name), args_cpy->name, all);
-			}
-			args_cpy = args_cpy->next;
-		}
+		arg_parse(args, all, args_cpy);
 	}
 	return (0);
 }
