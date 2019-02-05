@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 06:55:04 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 07:09:37 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,20 @@ void	cont_stat(t_file *file, t_all *all)
 	dump = file;
 	while (file)
 	{
-		file=file->next;
+		stat(file->name, &(file->dir_stat));
+		if (all->len_count_sym < ft_strlen(ft_itoa(file->dir_stat.st_nlink)))
+			all->len_count_sym = ft_strlen(ft_itoa(file->dir_stat.st_nlink));
+		if (all->len_name < ft_strlen(getpwuid(file->dir_stat.st_uid)->pw_name))
+			all->len_name = ft_strlen(getpwuid(file->dir_stat.st_uid)->pw_name);
+		if (all->len_ves < ft_strlen(ft_itoa(file->dir_stat.st_size)))
+			all->len_ves = ft_strlen(ft_itoa(file->dir_stat.st_size));
+		if (all->len_gr < ft_strlen(getgrgid(file->dir_stat.st_gid)->gr_name))
+			all->len_gr = ft_strlen(getgrgid(file->dir_stat.st_gid)->gr_name);
+		if (all->len_namef < ft_strlen(file->name))
+			all->len_namef = ft_strlen(file->name);
+		file = file->next;
 	}
+	file = dump;
 }
 
 int		main(int c, char *v[])
@@ -123,13 +135,13 @@ int		main(int c, char *v[])
 		args = config_compare(args_cpy, all);
 		args = to_first(args);
 		args_cpy = args;
+		cont_stat(args_cpy, all);
 		while (args)
 		{
 			if (!(S_ISDIR(args->dir_stat.st_mode)))
 				ls_only_file(args, all);
 			args = args->next;
 		}
-		cont_stat(args_cpy, all);
 		while (args_cpy)
 		{
 			if (S_ISDIR(args_cpy->dir_stat.st_mode))
