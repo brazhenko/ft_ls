@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 06:37:52 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 07:54:26 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,57 +14,33 @@
 #include <stdlib.h>
 #include "ft_ls.h"
 
-//struct s_file
-//{
-//	int data;
-//	struct s_file *next, *prev;
-//};
+struct s_file			*split(struct s_file *head);
 
-//static int 		data_comparator(t_file *left, t_file *right)
-//{
-//	if (left->data > right->data)
-//		return (1);
-//	else
-//		return (0);
-//}
-
-struct s_file *split(struct s_file *head);
-
-struct s_file *merge(struct s_file *first, struct s_file *second, int (*f)(t_file *, t_file *))
+struct s_file			*merge(struct s_file *first,
+			struct s_file *second, int (*f)(t_file *, t_file *))
 {
-	// If first linked list is empty
 	if (!first)
-		return second;
-
-	// If second linked list is empty
+		return (second);
 	if (!second)
-		return first;
-
-	// Pick the smaller value
+		return (first);
 	if (f(first, second))
 	{
-		first->next = merge(first->next,second, f);
+		first->next = merge(first->next, second, f);
 		first->next->prev = first;
 		first->prev = NULL;
-		return first;
+		return (first);
 	}
 	else
 	{
-		second->next = merge(first,second->next, f);
+		second->next = merge(first, second->next, f);
 		second->next->prev = second;
 		second->prev = NULL;
-		return second;
+		return (second);
 	}
 }
 
-void	 insert_file(t_all *all)
+void					insert_file(t_all *all)
 {
-	// (*head)->blocks = 0;
-	// (*head)->blocks_a = 0;
-	// (*head)->data = 0;
-	// (*head)->dir_dirent = NULL;
-	// (*head)->dir_stat = NULL;
-	// (*head)->dir_struct = NULL;
 	all->len_count_sym = 0;
 	all->len_gr = 0;
 	all->len_name = 0;
@@ -72,19 +48,17 @@ void	 insert_file(t_all *all)
 	all->len_ves = 0;
 }
 
-// A utility function to insert a new node at the
-// beginning of doubly linked list
-int insert(struct s_file **head, char *name, char *full_name, t_all *all)
+int						insert(struct s_file **head, char *name,
+			char *full_name, t_all *all)
 {
-	int		total;
+	int				total;
+	struct s_file	*temp;
 
-	//тут был пункт temp->data = 5, убрал его нахуй, вообще не понимаю зачем он нужен был(
-	struct s_file *temp =
-			(struct s_file *)malloc(sizeof(struct s_file));
-	temp->next = temp->prev = NULL;
+	temp = (struct s_file *)malloc(sizeof(struct s_file));
+	temp->next = NULL;
+	temp->prev = NULL;
 	temp->name = name;
 	stat(ft_strjoin(ft_strjoin(full_name, "/"), name), &temp->dir_stat);
-	// <вычисление максимальной длинны>
 	if (all->len_count_sym < ft_strlen(ft_itoa(temp->dir_stat.st_nlink)))
 		all->len_count_sym = ft_strlen(ft_itoa(temp->dir_stat.st_nlink));
 	if (all->len_name < ft_strlen(getpwuid(temp->dir_stat.st_uid)->pw_name))
@@ -95,7 +69,6 @@ int insert(struct s_file **head, char *name, char *full_name, t_all *all)
 		all->len_gr = ft_strlen(getgrgid(temp->dir_stat.st_gid)->gr_name);
 	if (all->len_namef < ft_strlen(temp->name))
 		all->len_namef = ft_strlen(temp->name);
-	// </вычисление максимальной длинны>
 	if (temp->name[0] == '.' && !all->flags['a'])
 		total = 0;
 	else
@@ -108,102 +81,45 @@ int insert(struct s_file **head, char *name, char *full_name, t_all *all)
 		(*head)->prev = temp;
 		(*head) = temp;
 	}
-	return total;
+	return (total);
 }
 
-// A utility function to print a doubly linked list in
-// both forward and backward directions
-void print(struct s_file *head)
+void					swap(int *a, int *b)
 {
-	struct s_file *temp = head;
-	printf("Forward Traversal using next poitner\n");
-	while (head)
-	{
-		printf("%d ",head->data);
-		temp = head;
-		head = head->next;
-	}
-	printf("\nBackward Traversal using prev pointer\n");
-	while (temp)
-	{
-		printf("%d ", temp->data);
-		temp = temp->prev;
-	}
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-// Utility function to swap two integers
-void swap(int *A, int *B)
+struct s_file			*split(struct s_file *head)
 {
-	int temp = *A;
-	*A = *B;
-	*B = temp;
-}
+	struct s_file *fast;
+	struct s_file *slow;
+	struct s_file *temp;
 
-// Split a doubly linked list (DLL) into 2 DLLs of
-// half sizes
-struct s_file *split(struct s_file *head)
-{
-	struct s_file *fast = head,*slow = head;
+	fast = head;
+	slow = head;
 	while (fast->next && fast->next->next)
 	{
 		fast = fast->next->next;
 		slow = slow->next;
 	}
-	struct s_file *temp = slow->next;
+	temp = slow->next;
 	slow->next = NULL;
-	return temp;
+	return (temp);
 }
 
-// Function to do merge sort
-struct s_file *mergeSort(struct s_file *head, int (*f)(t_file *, t_file *))
+struct s_file			*mergeSort(struct s_file *head,
+			int (*f)(t_file *, t_file *))
 {
-	if (!head || !head->next)
-		return head;
-	struct s_file *second = split(head);
+	struct s_file *second;
 
-	// Recur for left and right halves
+	if (!head || !head->next)
+		return (head);
+	second = split(head);
 	head = mergeSort(head, f);
 	second = mergeSort(second, f);
-
-	// Merge the two sorted halves
-	return merge(head,second, f);
+	return (merge(head, second, f));
 }
-
- //Driver program
-
-//int main(void)
-//{
-//	struct s_file *head = NULL;
-//	insert(&head,30, NULL, NULL);
-//	insert(&head,5, NULL, NULL);
-//	insert(&head,20, NULL, NULL);
-//	insert(&head,4, NULL, NULL);
-//	insert(&head,3, NULL, NULL);
-//	insert(&head,10, NULL, NULL);
-//	insert(&head,30, NULL, NULL);
-//	insert(&head,5, NULL, NULL);
-//	insert(&head,20, NULL, NULL);
-//	insert(&head,4, NULL, NULL);
-//	insert(&head,3, NULL, NULL);
-//	insert(&head,10, NULL, NULL);
-//	insert(&head,30, NULL, NULL);
-//	insert(&head,5, NULL, NULL);
-//	insert(&head,20, NULL, NULL);
-//	insert(&head,4, NULL, NULL);
-//	insert(&head,3, NULL, NULL);
-//	insert(&head,10, NULL, NULL);
-//	insert(&head,30, NULL, NULL);
-//	insert(&head,5, NULL, NULL);
-//	insert(&head,20, NULL, NULL);
-//	insert(&head,4, NULL, NULL);
-//	insert(&head,3, NULL, NULL);
-//	insert(&head,10, NULL, NULL);
-//
-//	print(head);
-//	printf("\n___________________________");
-//
-//	head = mergeSort(head, &data_comparator);
-//	printf("\n\nLinked List after sorting\n");
-//	print(head);
-//	return 0;
-//}
