@@ -12,14 +12,16 @@
 
 #include "ft_ls.h"
 
-t_file			*to_list(struct dirent *file, char *name, char *full_name, t_file *list)
+t_file			*to_list(struct dirent *file, char *name,
+							char *full_name, t_file *list)
 {
+	t_file *node;
+
 	while (list && list->next)
 		list = list->next;
-	t_file *node = t_file_new(file, name, full_name);
+	node = t_file_new(file, name, full_name);
 	node->prev = list;
 	if (list)
 		list->next = node;
 	return (node);
 }
-
