@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 09:34:04 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 02:47:06 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,5 @@ t_file				*parse_args(int c, char *const *v,
 void				cont_stat(t_file *file, t_all *all);
 void				ls_error(char *file_name, int n);
 void				ls_only_file(t_file *file_lst, t_all *all);
-static void			print_flags(char *flags);
 
 #endif

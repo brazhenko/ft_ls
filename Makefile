@@ -2,7 +2,8 @@ SRC			= src
 INCLUDE 	= inc
 
 all:
-	@gcc -g -Werror -pedantic \
+	@cd printf && make re
+	@gcc -g -Wall -Wextra -Werror -pedantic \
 			$(SRC)/ft_ls.c \
 			$(SRC)/ls_files_r.c \
 			$(SRC)/t_file_new.c \

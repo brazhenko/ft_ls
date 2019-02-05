@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 08:25:30 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 08:31:12 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 02:46:49 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ int				comparator_t(t_file *left, t_file *right)
 
 int				comparator_f(t_file *left, t_file *right)
 {
+	if (left && right)
+		return (0);
 	return (0);
 }

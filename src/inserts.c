@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 09:03:56 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 09:04:35 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 02:48:19 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ void					insert_file(t_all *all)
 
 void					insert_cmp(t_all *all, const struct s_file *temp)
 {
-	if (all->len_cs < ft_strlen(ft_itoa(temp->d_st.st_nlink)))
-		all->len_cs = ft_strlen(ft_itoa(temp->d_st.st_nlink));
-	if (all->l_n < ft_strlen(getpwuid(temp->d_st.st_uid)->pw_name))
-		all->l_n = ft_strlen(getpwuid(temp->d_st.st_uid)->pw_name);
-	if (all->len_ves < ft_strlen(ft_itoa(temp->d_st.st_size)))
-		all->len_ves = ft_strlen(ft_itoa(temp->d_st.st_size));
-	if (all->len_gr < ft_strlen(getgrgid(temp->d_st.st_gid)->gr_name))
-		all->len_gr = ft_strlen(getgrgid(temp->d_st.st_gid)->gr_name);
-	if (all->len_namef < ft_strlen(temp->name))
-		all->len_namef = ft_strlen(temp->name);
+	if (all->len_cs < (int)ft_strlen(ft_itoa(temp->d_st.st_nlink)))
+		all->len_cs = (int)ft_strlen(ft_itoa(temp->d_st.st_nlink));
+	if (all->l_n < (int)ft_strlen(getpwuid(temp->d_st.st_uid)->pw_name))
+		all->l_n = (int)ft_strlen(getpwuid(temp->d_st.st_uid)->pw_name);
+	if (all->len_ves < (int)ft_strlen(ft_itoa(temp->d_st.st_size)))
+		all->len_ves = (int)ft_strlen(ft_itoa(temp->d_st.st_size));
+	if (all->len_gr < (int)ft_strlen(getgrgid(temp->d_st.st_gid)->gr_name))
+		all->len_gr = (int)ft_strlen(getgrgid(temp->d_st.st_gid)->gr_name);
+	if (all->len_namef < (int)ft_strlen(temp->name))
+		all->len_namef = (int)ft_strlen(temp->name);
 }
 
 int						insert(struct s_file **head, char *name,

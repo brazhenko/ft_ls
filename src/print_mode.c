@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_mode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 07:59:04 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/02/05 07:59:06 by lreznak-         ###   ########.fr       */
+/*   Updated: 2019/02/06 02:47:41 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
-static void	bin(int k)
-{
-	int n;
-
-	if (k >= 2)
-		bin(k / 2);
-	n = k % 2 + '0';
-	write(1, &n, 1);
-}
 
 void		print_mode(int mode)
 {

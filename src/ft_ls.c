@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 09:31:01 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 02:48:48 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,6 @@ void				ls_only_file(t_file *file_lst, t_all *all)
 	}
 }
 
-static void			print_flags(char *flags)
-{
-	int		i;
-
-	i = 'a';
-	while (i < 128)
-	{
-		if (flags[i])
-			write(1, "1", 1);
-		else
-			write(1, "0", 1);
-		i++;
-	}
-}
-
 void				cont_stat(t_file *file, t_all *all)
 {
 	t_file *dump;
@@ -71,16 +56,16 @@ void				cont_stat(t_file *file, t_all *all)
 	while (file)
 	{
 		stat(file->name, &(file->d_st));
-		if (all->len_cs < ft_strlen(ft_itoa(file->d_st.st_nlink)))
-			all->len_cs = ft_strlen(ft_itoa(file->d_st.st_nlink));
-		if (all->l_n < ft_strlen(getpwuid(file->d_st.st_uid)->pw_name))
-			all->l_n = ft_strlen(getpwuid(file->d_st.st_uid)->pw_name);
-		if (all->len_ves < ft_strlen(ft_itoa(file->d_st.st_size)))
-			all->len_ves = ft_strlen(ft_itoa(file->d_st.st_size));
-		if (all->len_gr < ft_strlen(getgrgid(file->d_st.st_gid)->gr_name))
-			all->len_gr = ft_strlen(getgrgid(file->d_st.st_gid)->gr_name);
-		if (all->len_namef < ft_strlen(file->name))
-			all->len_namef = ft_strlen(file->name);
+		if (all->len_cs < (int)ft_strlen(ft_itoa(file->d_st.st_nlink)))
+			all->len_cs = (int)ft_strlen(ft_itoa(file->d_st.st_nlink));
+		if (all->l_n < (int)ft_strlen(getpwuid(file->d_st.st_uid)->pw_name))
+			all->l_n = (int)ft_strlen(getpwuid(file->d_st.st_uid)->pw_name);
+		if (all->len_ves < (int)ft_strlen(ft_itoa(file->d_st.st_size)))
+			all->len_ves = (int)ft_strlen(ft_itoa(file->d_st.st_size));
+		if (all->len_gr < (int)ft_strlen(getgrgid(file->d_st.st_gid)->gr_name))
+			all->len_gr = (int)ft_strlen(getgrgid(file->d_st.st_gid)->gr_name);
+		if (all->len_namef < (int)ft_strlen(file->name))
+			all->len_namef = (int)ft_strlen(file->name);
 		file = file->next;
 	}
 	file = dump;
@@ -94,6 +79,7 @@ int					main(int c, char *v[])
 	t_all			*all;
 	t_file			*args_cpy;
 
+	args_cpy = NULL;
 	all = malloc(sizeof(t_all*));
 	args = NULL;
 	flags = parse_flags(c, v, &last_flag);
