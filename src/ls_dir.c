@@ -12,24 +12,8 @@
 
 #include "ft_ls.h"
 
-
-
-//static int		name_comparator(t_file *left, t_file *right)
-//{
-//	if (ft_strcmp(left->name, right->name) < 0)
-//	{
-//		// printf("1");
-//		return (1);
-//	}
-//	// printf("0");
-//	return (0);
-//}
-
-
 int		comparator_classic(t_file *left, t_file *right)
 {
-	//if (left->dir_stat.st_atimespec.tv_sec < right->dir_stat.st_atimespec.tv_sec)
-	// if (left->data > right->data)
 	if (ft_strcmp(left->name, right->name) < 0)
 	{
 		// sprintf("1");
@@ -41,8 +25,6 @@ int		comparator_classic(t_file *left, t_file *right)
 
 int		comparator_r(t_file *left, t_file *right)
 {
-	//if (left->dir_stat.st_atimespec.tv_sec < right->dir_stat.st_atimespec.tv_sec)
-	// if (left->data > right->data)
 	if (ft_strcmp(left->name, right->name) > 0)
 	{
 		return (1);
@@ -124,7 +106,6 @@ void	printf_len_hu_num(unsigned short int num, int n)
 	printf(" %hu", num);
 }
 
-// тут нет обработки ширины(((
 char	*cut_time(char *str)
 {
 	int		i;
@@ -148,9 +129,6 @@ char	*cut_time(char *str)
 	}
 	return (res);
 }
-
-// d -> -R
-// f -> +a, -r -t
 
 t_file			*config_compare(t_file	*file_lst, t_all *all)
 {
@@ -182,7 +160,6 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 	while ((file = readdir(cur_dir)))
 	{
 		total += insert(&file_lst, file->d_name, full_name, all);
-		// printf("write.. %s\n", file->d_name);
 	}
 	if (all->flags['l'])
 	{
@@ -213,9 +190,7 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 			}
 			else
 				printf_len_post_str(file_lst->name, all->len_namef);
-			//printf(" %s %lld %s", file_lst->name, file_lst->dir_stat.st_blocks, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
 		}
-		// ls_only_file(file_lst, all);
 		file_lst = file_lst->next;
 	}
 	return (cpy);
