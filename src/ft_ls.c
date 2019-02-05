@@ -38,18 +38,21 @@ void				ls_only_file(t_file *file_lst, t_all *all)
 			print_mode(file_lst->dir_stat.st_mode);
 			printf_len_hu_num(file_lst->dir_stat.st_nlink, all->len_count_sym);
 			if (!(all->flags['g']))
-				printf_len_str(getpwuid(file_lst->dir_stat.st_uid)->pw_name, all->len_name);
-			printf_len_str(getgrgid(file_lst->dir_stat.st_gid)->gr_name, all->len_gr);
+				printf_len_str(getpwuid(file_lst->dir_stat.st_uid)->
+												pw_name, all->len_name);
+			printf_len_str(getgrgid(file_lst->dir_stat.st_gid)->
+													gr_name, all->len_gr);
 			printf_len_llnum(file_lst->dir_stat.st_size, all->len_ves);
 			if (all->flags['u'])
-				printf(" %s ", cut_time(ctime(&((file_lst->dir_stat).st_atimespec).tv_sec)));
+				printf(" %s ", cut_time(ctime(&((file_lst->
+							dir_stat).st_atimespec).tv_sec)));
 			else
-				printf(" %s ", cut_time(ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec)));
+				printf(" %s ", cut_time(ctime(&((file_lst->
+							dir_stat).st_ctimespec).tv_sec)));
 			printf("%s\n", file_lst->name);
 		}
 		else
 			printf_len_post_str(file_lst->name, all->len_namef);
-		//printf(" %s %lld %s", file_lst->name, file_lst->dir_stat.st_blocks, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
 	}
 }
 
@@ -94,8 +97,8 @@ void	cont_stat(t_file *file, t_all *all)
 
 int		main(int c, char *v[])
 {
-	int 			last_flag;
-	char 			*flags;
+	int				last_flag;
+	char			*flags;
 	t_file			*args;
 	t_all			*all;
 	t_file			*args_cpy;
@@ -104,8 +107,6 @@ int		main(int c, char *v[])
 	args = NULL;
 	flags = parse_flags(c, v, &last_flag);
 	all->flags = flags;
-	// print_flags(flags);
-	// printf("---%d\n", last_flag);
 	if (c == last_flag + 1)
 	{
 		if (flags['R'])
