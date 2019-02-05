@@ -12,6 +12,7 @@
 
 #ifndef FT_LS_H
 # define FT_LS_H
+# define printf ft_printf
 
 # include "libft.h"
 # include <stdio.h>

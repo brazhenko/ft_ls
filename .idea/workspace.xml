@@ -13,36 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="21741cd2-1d5a-4387-8686-91a48d618f1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/C.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ft_ls.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ft_ls.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ft_ls.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/ft_ls.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/ft_ls.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comparators.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/comparators.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ft_ls.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/ft_ls.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inserts.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/inserts.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ls_dir.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/ls_dir.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/printfc.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/printfc.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/t_file_new.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/t_file_new.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tes/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tes/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tes/3" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,11 +59,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ft_ls.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="419">
-                  <caret line="137" column="28" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
+                <state relative-caret-position="209">
+                  <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -117,17 +89,20 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Makefile">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+                <state relative-caret-position="435">
+                  <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/inc/ft_ls.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="67" selection-start-column="67" selection-end-column="67" />
+                <state relative-caret-position="48">
+                  <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#926#945#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -279,16 +254,16 @@
         <option value="$PROJECT_DIR$/src/test/merge_sort.c" />
         <option value="$PROJECT_DIR$/src/print_modes.c" />
         <option value="$PROJECT_DIR$/src/print_mode.c" />
-        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/to_list.c" />
         <option value="$PROJECT_DIR$/src/merge_sort.c" />
         <option value="$PROJECT_DIR$/testfile" />
         <option value="$PROJECT_DIR$/src/ls_dir.c" />
         <option value="$PROJECT_DIR$/src/printfc.c" />
-        <option value="$PROJECT_DIR$/inc/ft_ls.h" />
         <option value="$PROJECT_DIR$/src/inserts.c" />
         <option value="$PROJECT_DIR$/src/ft_ls.c" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/inc/ft_ls.h" />
       </list>
     </option>
   </component>
@@ -374,7 +349,7 @@
       <workItem from="1548091359199" duration="76000" />
       <workItem from="1548091457036" duration="9397000" />
       <workItem from="1548117491981" duration="17409000" />
-      <workItem from="1549345059570" duration="2318000" />
+      <workItem from="1549345059570" duration="3014000" />
     </task>
     <task id="LOCAL-00001" summary="date cmp modified">
       <created>1547869759132</created>
@@ -394,7 +369,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43616000" />
+    <option name="totallyTimeSpent" value="44312000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -409,7 +384,7 @@
     <frame x="0" y="0" width="2880" height="1620" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49850747" side_tool="true" weight="0.13319239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49850747" side_tool="true" visible="true" weight="0.13319239" />
       <window_info id="Structure" order="1" sideWeight="0.50149256" side_tool="true" weight="0.13463067" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.14257348" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -421,7 +396,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32931727" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32851407" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49960285" visible="true" weight="0.3019355" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960285" weight="0.3619355" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039715" side_tool="true" weight="0.28915662" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32851407" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32851407" />
@@ -431,7 +406,7 @@
       <window_info anchor="right" id="Database" order="3" weight="0.17739628" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49850747" side_tool="true" weight="0.13319239" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49850747" side_tool="true" visible="true" weight="0.13319239" />
       <window_info id="Structure" order="1" sideWeight="0.50149256" side_tool="true" weight="0.13463067" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.14257348" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -443,7 +418,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32931727" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32851407" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49960285" visible="true" weight="0.3019355" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49960285" visible="true" weight="0.3619355" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039715" side_tool="true" weight="0.28915662" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32851407" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32851407" />
@@ -481,13 +456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="30" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -574,10 +542,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/ft_ls.h">
+    <entry file="file://$PROJECT_DIR$/src/ft_ls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="67" selection-start-column="67" selection-end-column="67" />
+        <state relative-caret-position="209">
+          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
@@ -588,10 +563,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ft_ls.c">
+    <entry file="file://$PROJECT_DIR$/inc/ft_ls.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="137" column="28" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
+        <state relative-caret-position="48">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="e#926#945#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
