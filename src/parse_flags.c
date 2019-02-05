@@ -14,7 +14,7 @@
 
 static void			print_usage(char c)
 {
-	write(1, "ls: illegal option -- ",22);
+	write(1, "ls: illegal option -- ", 22);
 	write(1, &c, 1);
 	write(1, "\nusage: ls [-Ra] [file ...]\n", 28);
 	exit(0);
@@ -22,7 +22,8 @@ static void			print_usage(char c)
 
 static int			is_flag(char c)
 {
-	if (c == 'l' || c == 'R' || c == 'a' || c == 'r' ||  c == 't' || c == 'u' || c == 'f' || c == 'g' || c == 'd')
+	if (c == 'l' || c == 'R' || c == 'a' || c == 'r' || c == 't' ||
+						c == 'u' || c == 'f' || c == 'g' || c == 'd')
 		return (1);
 	return (0);
 }
@@ -46,7 +47,7 @@ static	int			parse_flag(char *arg, char **flags)
 		arg++;
 		while (*arg)
 		{
-			conflict(*arg, flags); // добавил только 2 конфликта (больше пока не нашёл, найдёшь - впиши)
+			conflict(*arg, flags);
 			if (is_flag(*arg))
 				(*flags)[((int)*arg)] = 1;
 			else
@@ -57,7 +58,6 @@ static	int			parse_flag(char *arg, char **flags)
 	}
 	return (0);
 }
-
 
 char				*parse_flags(int argc, char **argv, int *last_flag)
 {
