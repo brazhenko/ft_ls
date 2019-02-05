@@ -18,8 +18,6 @@ void	del_dir(t_file *cur_dir)
 		return ;
 	if (cur_dir->next && cur_dir->next->prev)
 		cur_dir->next->prev = NULL;
-// if (cur_dir->dir_struct)
-		// closedir(cur_dir->dir_struct);
 	free(cur_dir);
 }
 
@@ -34,10 +32,10 @@ int		ls_files_r(char *full_name, t_all *all)
 	cur_dir_lst = ls_dir(cur_dir, full_name, all);
 	while (cur_dir_lst)
 	{
-		if (ft_strcmp(cur_dir_lst->name, "..") && ft_strcmp(cur_dir_lst->name, "."))
-		{
-			ls_files_r(ft_strjoin(ft_strjoin(full_name, "/"), cur_dir_lst->name), all);
-		}
+		if (ft_strcmp(cur_dir_lst->name, "..") &&
+				ft_strcmp(cur_dir_lst->name, "."))
+			ls_files_r(ft_strjoin(ft_strjoin(full_name, "/"),
+					cur_dir_lst->name), all);
 		cur_dir_lst = cur_dir_lst->next;
 		if (cur_dir_lst)
 			del_dir(cur_dir_lst->prev);
