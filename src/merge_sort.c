@@ -14,8 +14,6 @@
 #include <stdlib.h>
 #include "ft_ls.h"
 
-struct s_file			*split(struct s_file *head);
-
 struct s_file			*merge(struct s_file *first,
 			struct s_file *second, int (*f)(t_file *, t_file *))
 {
@@ -48,17 +46,8 @@ void					insert_file(t_all *all)
 	all->len_ves = 0;
 }
 
-int						insert(struct s_file **head, char *name,
-			char *full_name, t_all *all)
+void					insert_cmp(t_all *all, const struct s_file *temp)
 {
-	int				total;
-	struct s_file	*temp;
-
-	temp = (struct s_file *)malloc(sizeof(struct s_file));
-	temp->next = NULL;
-	temp->prev = NULL;
-	temp->name = name;
-	stat(ft_strjoin(ft_strjoin(full_name, "/"), name), &temp->dir_stat);
 	if (all->len_count_sym < ft_strlen(ft_itoa(temp->dir_stat.st_nlink)))
 		all->len_count_sym = ft_strlen(ft_itoa(temp->dir_stat.st_nlink));
 	if (all->len_name < ft_strlen(getpwuid(temp->dir_stat.st_uid)->pw_name))
@@ -69,6 +58,20 @@ int						insert(struct s_file **head, char *name,
 		all->len_gr = ft_strlen(getgrgid(temp->dir_stat.st_gid)->gr_name);
 	if (all->len_namef < ft_strlen(temp->name))
 		all->len_namef = ft_strlen(temp->name);
+}
+
+int						insert(struct s_file **head, char *name,
+								char *full_name, t_all *all)
+{
+	int				total;
+	struct s_file	*temp;
+
+	temp = (struct s_file *)malloc(sizeof(struct s_file));
+	temp->next = NULL;
+	temp->prev = NULL;
+	temp->name = name;
+	stat(ft_strjoin(ft_strjoin(full_name, "/"), name), &temp->dir_stat);
+	insert_cmp(all, temp);
 	if (temp->name[0] == '.' && !all->flags['a'])
 		total = 0;
 	else
@@ -111,15 +114,15 @@ struct s_file			*split(struct s_file *head)
 	return (temp);
 }
 
-struct s_file			*mergeSort(struct s_file *head,
-			int (*f)(t_file *, t_file *))
+struct s_file			*merge_sort(struct s_file *head,
+							int (*f)(t_file *, t_file *))
 {
 	struct s_file *second;
 
 	if (!head || !head->next)
 		return (head);
 	second = split(head);
-	head = mergeSort(head, f);
-	second = mergeSort(second, f);
+	head = merge_sort(head, f);
+	second = merge_sort(second, f);
 	return (merge(head, second, f));
 }

@@ -134,18 +134,18 @@ char			*cut_time(char *str)
 t_file			*config_compare(t_file *file_lst, t_all *all)
 {
 	if (all->flags['r'])
-		return (mergeSort(file_lst, &comparator_r));
+		return (merge_sort(file_lst, &comparator_r));
 	else if (all->flags['f'])
-		return (mergeSort(file_lst, &comparator_f));
+		return (merge_sort(file_lst, &comparator_f));
 	else if (all->flags['t'])
 	{
 		if (all->flags['u'])
-			return (mergeSort(file_lst, &comparator_tu));
+			return (merge_sort(file_lst, &comparator_tu));
 		else
-			return (mergeSort(file_lst, &comparator_t));
+			return (merge_sort(file_lst, &comparator_t));
 	}
 	else
-		return (mergeSort(file_lst, &comparator_classic));
+		return (merge_sort(file_lst, &comparator_classic));
 }
 
 t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)

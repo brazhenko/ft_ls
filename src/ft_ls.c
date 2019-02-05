@@ -71,7 +71,7 @@ static void			print_flags(char *flags)
 	}
 }
 
-void	cont_stat(t_file *file, t_all *all)
+void				cont_stat(t_file *file, t_all *all)
 {
 	t_file *dump;
 
@@ -95,7 +95,7 @@ void	cont_stat(t_file *file, t_all *all)
 	file = dump;
 }
 
-int		main(int c, char *v[])
+int					main(int c, char *v[])
 {
 	int				last_flag;
 	char			*flags;
@@ -122,7 +122,7 @@ int		main(int c, char *v[])
 			args = to_list(NULL, v[last_flag], ".", args);
 			last_flag++;
 		}
-		args = mergeSort(to_first(args), &comparator_classic);
+		args = merge_sort(to_first(args), &comparator_classic);
 		args_cpy = args;
 		while (args)
 		{
