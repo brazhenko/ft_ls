@@ -12,7 +12,15 @@ static void bin(int k)
 
 void 		print_mode(int mode)
 {
-    printf("%c", (S_ISDIR(mode)) ? 'd' : '-');
+    if (S_ISDIR(mode))
+        printf("d");
+    else if (mode & 1024)
+        printf("c");
+    else if (mode & 2048)
+        printf("b");
+    else
+        printf("-");
+    // printf("%c", (S_ISDIR(mode)) ? 'd' : '-');
 	printf("%c", (mode & 256) ? 'r' : '-');
     printf("%c", (mode & 128) ? 'w' : '-');
     printf("%c", (mode & 64) ? 'x' : '-');

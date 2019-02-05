@@ -34,7 +34,6 @@ int		ls_files_r(char *full_name, t_all *all)
 	cur_dir_lst = ls_dir(cur_dir, full_name, all);
 	while (cur_dir_lst)
 	{
-		// if (cur_dir_lst->dir_dirent->d_type == 4 && cur_dir_lst->dir_dirent->d_name[0] != '.')
 		if (ft_strcmp(cur_dir_lst->name, "..") && ft_strcmp(cur_dir_lst->name, "."))
 		{
 			ls_files_r(ft_strjoin(ft_strjoin(full_name, "/"), cur_dir_lst->name), all);
