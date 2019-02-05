@@ -12,7 +12,7 @@
 
 #include "ft_ls.h"
 
-int             file_name_cmp(t_file* left, t_file *right)
+int						file_name_cmp(t_file *left, t_file *right)
 {
-    return (ft_strcmp(left->name, right->name));
+	return (ft_strcmp(left->name, right->name));
 }
