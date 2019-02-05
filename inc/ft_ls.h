@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/22 20:27:25 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 04:45:04 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,14 @@ typedef struct				s_file
 	struct s_file	*prev;
 
 	char			*name;
-	int 			data;
+	int				data;
 	int				is_handled;
 	DIR				*dir_struct;
 	struct dirent	*dir_dirent;
 	struct stat		dir_stat;
 	int				blocks_a;
 	int				blocks;
+	int				is_exist;
 }							t_file;
 
 
@@ -67,5 +68,18 @@ t_file				*to_list(struct dirent *file, char *name, 		\
 void				print_mode(int mode);
 struct				s_file *mergeSort(struct s_file *head, int (*f)(t_file *, t_file *));
 int					insert(struct s_file **head, char *name, char *full_name, t_all *all);
+int					comparator_classic(t_file *left, t_file *right);
+void                t_file_del(t_file *node);
+t_file				*config_compare(t_file	*file_lst, t_all *all);
+void				ls_only_file(t_file *file_lst, t_all *all);
+void				printf_len_hu_num(unsigned short int num, int n);
+void				printf_len_str(char *str, int n);
+void				printf_len_llnum(long long int num, int n);
+char				*cut_time(char *str);
+void				printf_len_post_str(char *str, int n);
+int					insert(struct s_file **head, char *name, char *full_name, t_all *all);
+
+
+
 
 #endif

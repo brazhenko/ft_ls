@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/ft_ls",
-            "args": [],
+            "args": ["-l", "CMakeLists.txt", "-R", "README.md"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/02/05 00:42:46 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 04:39:17 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 //	// printf("0");
 //	return (0);
 //}
+
 
 int		comparator_classic(t_file *left, t_file *right)
 {
@@ -76,8 +77,11 @@ void	printf_len_str(char *str, int n)
 	int i;
 
 	i = n - ft_strlen(str);
-	while (i--)
+	while (i > 0)
+	{
 		printf("%s", " ");
+		i--;
+	}
 	printf(" %s", str);
 }
 
@@ -87,8 +91,11 @@ void	printf_len_post_str(char *str, int n)
 
 	i = n - ft_strlen(str);
 	printf("%s ", str);
-	while (i--)
+	while (i > 0)
+	{
 		printf("%s", " ");
+		i--;
+	}
 }
 
 void	printf_len_llnum(long long int num, int n)
@@ -96,8 +103,11 @@ void	printf_len_llnum(long long int num, int n)
 	int i;
 
 	i = n - ft_strlen(ft_itoa(num));
-	while (i--)
+	while (i > 0)
+	{
 		printf("%s", " ");
+		i--;
+	}
 	printf(" %lld", num);
 }
 
@@ -106,8 +116,11 @@ void	printf_len_hu_num(unsigned short int num, int n)
 	int i;
 
 	i = n - ft_strlen(ft_itoa(num));
-	while (i--)
+	while (i > 0)
+	{
 		printf("%s", " ");
+		i--;
+	}
 	printf(" %hu", num);
 }
 
@@ -168,12 +181,15 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 	all->len_gr = 0;
 	while ((file = readdir(cur_dir)))
 	{
-		total += insert(&file_lst,file->d_name, full_name, all);
+		total += insert(&file_lst, file->d_name, full_name, all);
 		// printf("write.. %s\n", file->d_name);
 	}
 	if (all->flags['l'])
 	{
-		printf("\n%s\nTotal: %d\n", full_name, total);
+		if (all->flags['R'])
+			printf("\n%s\nTotal: %d\n", full_name, total);
+		else
+			printf("Total: %d\n", total);
 	}
 	file_lst = config_compare(file_lst, all);
 	t_file *cpy = file_lst;
@@ -199,6 +215,7 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 				printf_len_post_str(file_lst->name, all->len_namef);
 			//printf(" %s %lld %s", file_lst->name, file_lst->dir_stat.st_blocks, ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec));
 		}
+		// ls_only_file(file_lst, all);
 		file_lst = file_lst->next;
 	}
 	return (cpy);

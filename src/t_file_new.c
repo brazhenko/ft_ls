@@ -6,13 +6,33 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 21:19:18 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/01/19 06:10:01 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 03:01:03 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_file  *t_file_new(struct dirent *file, char *name, char *full_name)
+void                t_file_del(t_file *node)
+{
+    if (node)
+    {
+        if (node->next && node->prev)
+        {
+            node->next->prev = node->prev;
+            node->prev->next = node->next;
+        }
+        else if (node->next && !node->prev)
+        {
+            node->next->prev = NULL;
+        }
+        else if (!node->next && node->prev)
+        {
+            node->prev->next = NULL;
+        }   
+    }
+}
+
+t_file          *t_file_new(struct dirent *file, char *name, char *full_name)
 {
     t_file *new;
 
@@ -22,7 +42,14 @@ t_file  *t_file_new(struct dirent *file, char *name, char *full_name)
     new->prev = NULL;
     new->next = NULL;
     //printf("writing... %s   %s \n", full_name, name);
-    stat(ft_strjoin(ft_strjoin(full_name, "/"), name), &new->dir_stat);
+    if ((stat(ft_strjoin(ft_strjoin(full_name, "/"), name), &new->dir_stat)) == -1)
+    {    
+        new->is_exist = 0;
+    }
+    else
+    {
+        new->is_exist = 1;
+    }
     new->dir_dirent = file;
     return (new);
 }
