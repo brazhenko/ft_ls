@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 09:05:30 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/05 09:34:04 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ typedef struct		s_file
 
 int					ls_files_r(char *name, t_all *all);
 t_file				*ls_dir(DIR *cur_dir, char *name, t_all *all);
-t_file				*t_file_new(struct dirent *file, char *name, \
+t_file				*t_file_new(struct dirent *file, char *name,
 					char *full_name);
 char				*parse_flags(int argc, char **argv, int *last_flag);
 int					file_name_cmp(t_file *left, t_file *right);
 void				add_to_lst(t_file **lst, t_file *node);
-t_file				*to_list(struct dirent *file, char *name, 		\
+t_file				*to_list(struct dirent *file, char *name,
 					char *full_name, t_file *list);
 void				print_mode(int mode);
 struct s_file		*merge_sort(struct s_file *head,
@@ -92,5 +92,14 @@ void				insert_file(t_all *all);
 void				insert_cmp(t_all *all, const struct s_file *temp);
 int					insert(struct s_file **head, char *name,
 								char *full_name, t_all *all);
+t_file				*to_first(t_file *node);
+void				arg_parse(t_file *args, t_all *all, t_file *args_cpy);
+void				print_args(t_file *args, t_all *all, t_file *args_cpy);
+t_file				*parse_args(int c, char *const *v,
+							int last_flag, t_file *args);
+void				cont_stat(t_file *file, t_all *all);
+void				ls_error(char *file_name, int n);
+void				ls_only_file(t_file *file_lst, t_all *all);
+static void			print_flags(char *flags);
 
 #endif

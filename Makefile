@@ -14,6 +14,7 @@ all:
 			$(SRC)/comparators.c \
 			$(SRC)/printfc.c \
 			$(SRC)/inserts.c \
+			$(SRC)/handle_argv.c \
 			libft.a \
 			-I $(INCLUDE) \
 			-o ft_ls
