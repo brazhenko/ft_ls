@@ -3,7 +3,8 @@
 //
 
 #include "ft_ls.h"
-static void bin( int k )
+
+static void bin(int k)
 {
 	if (k >= 2)
 		bin(k / 2);
