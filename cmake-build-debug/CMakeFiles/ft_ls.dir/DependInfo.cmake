@@ -4,16 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lreznak-/Documents/ft_ls_new/src/file_name_cmp.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/file_name_cmp.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/ft_ls.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ft_ls.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/is_visible.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/is_visible.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/ls_dir.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_dir.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/ls_files_r.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_files_r.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/merge_sort.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/merge_sort.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/parse_flags.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/parse_flags.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/print_mode.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/print_mode.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/t_file_new.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/t_file_new.c.o"
-  "/Users/lreznak-/Documents/ft_ls_new/src/to_list.c" "/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/ft_ls.dir/src/to_list.c.o"
+  "/Users/lreznak-/Documents/newls/src/comparators.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/comparators.c.o"
+  "/Users/lreznak-/Documents/newls/src/file_name_cmp.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/file_name_cmp.c.o"
+  "/Users/lreznak-/Documents/newls/src/ft_ls.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ft_ls.c.o"
+  "/Users/lreznak-/Documents/newls/src/is_visible.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/is_visible.c.o"
+  "/Users/lreznak-/Documents/newls/src/ls_dir.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_dir.c.o"
+  "/Users/lreznak-/Documents/newls/src/ls_files_r.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/ls_files_r.c.o"
+  "/Users/lreznak-/Documents/newls/src/merge_sort.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/merge_sort.c.o"
+  "/Users/lreznak-/Documents/newls/src/parse_flags.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/parse_flags.c.o"
+  "/Users/lreznak-/Documents/newls/src/print_mode.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/print_mode.c.o"
+  "/Users/lreznak-/Documents/newls/src/t_file_new.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/t_file_new.c.o"
+  "/Users/lreznak-/Documents/newls/src/to_list.c" "/Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/ft_ls.dir/src/to_list.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

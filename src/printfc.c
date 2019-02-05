@@ -12,7 +12,7 @@
 
 #include "ft_ls.h"
 
-void			printf_len_str(char *str, int n)
+void			prt_st(char *str, int n)
 {
 	int i;
 

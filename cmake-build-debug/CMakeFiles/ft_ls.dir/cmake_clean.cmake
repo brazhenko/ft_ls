@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ft_ls.dir/src/comparators.c.o"
   "CMakeFiles/ft_ls.dir/src/file_name_cmp.c.o"
   "CMakeFiles/ft_ls.dir/src/ft_ls.c.o"
   "CMakeFiles/ft_ls.dir/src/is_visible.c.o"

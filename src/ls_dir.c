@@ -53,6 +53,35 @@ t_file			*config_compare(t_file *file_lst, t_all *all)
 		return (merge_sort(file_lst, &comparator_classic));
 }
 
+void			print_file(const t_all *all, t_file *file_lst)
+{
+	while (file_lst)
+	{
+		if (all->flags['a'] || (!all->flags['a'] && file_lst->name[0] != '.'))
+		{
+			if (all->flags['l'])
+			{
+				print_mode(file_lst->d_st.st_mode);
+				printf_len_hu_num(file_lst->d_st.st_nlink, all->len_cs);
+				if (!(all->flags['g']))
+					prt_st(getpwuid(file_lst->d_st.st_uid)->pw_name, all->l_n);
+				prt_st(getgrgid(file_lst->d_st.st_gid)->gr_name, all->len_gr);
+				printf_len_llnum(file_lst->d_st.st_size, all->len_ves);
+				if (all->flags['u'])
+					printf(" %s ", cut_time(ctime(&((file_lst->
+					d_st).st_atimespec).tv_sec)));
+				else
+					printf(" %s ", cut_time(ctime(&((file_lst->
+					d_st).st_ctimespec).tv_sec)));
+				printf("%s\n", file_lst->name);
+			}
+			else
+				printf_len_post_str(file_lst->name, all->len_namef);
+		}
+		file_lst = file_lst->next;
+	}
+}
+
 t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 {
 	struct dirent	*file;
@@ -62,14 +91,12 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 
 	total = 0;
 	file_lst = NULL;
-	all->len_count_sym = 0;
-	all->len_name = 0;
+	all->len_cs = 0;
+	all->l_n = 0;
 	all->len_ves = 0;
 	all->len_gr = 0;
 	while ((file = readdir(cur_dir)))
-	{
 		total += insert(&file_lst, file->d_name, full_name, all);
-	}
 	if (all->flags['l'])
 	{
 		if (all->flags['R'])
@@ -79,33 +106,6 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 	}
 	file_lst = config_compare(file_lst, all);
 	cpy = file_lst;
-	while (file_lst)
-	{
-		if (all->flags['a'] || (!all->flags['a'] && file_lst->name[0] != '.'))
-		{
-			if (all->flags['l'])
-			{
-				print_mode(file_lst->dir_stat.st_mode);
-				printf_len_hu_num(file_lst->dir_stat.st_nlink,
-									all->len_count_sym);
-				if (!(all->flags['g']))
-					printf_len_str(getpwuid(file_lst->dir_stat.st_uid)->pw_name,
-												all->len_name);
-				printf_len_str(getgrgid(file_lst->dir_stat.st_gid)->gr_name,
-																all->len_gr);
-				printf_len_llnum(file_lst->dir_stat.st_size, all->len_ves);
-				if (all->flags['u'])
-					printf(" %s ",
-				cut_time(ctime(&((file_lst->dir_stat).st_atimespec).tv_sec)));
-				else
-					printf(" %s ",
-				cut_time(ctime(&((file_lst->dir_stat).st_ctimespec).tv_sec)));
-				printf("%s\n", file_lst->name);
-			}
-			else
-				printf_len_post_str(file_lst->name, all->len_namef);
-		}
-		file_lst = file_lst->next;
-	}
+	print_file(all, file_lst);
 	return (cpy);
 }

@@ -30,8 +30,8 @@
 typedef struct				s_all
 {
 	char					*flags;
-	int						len_count_sym;
-	int						len_name;
+	int						len_cs;
+	int						l_n;
 	int						len_gr;
 	int						len_ves;
 	int						len_namef;
@@ -47,7 +47,7 @@ typedef struct				s_file
 	int				is_handled;
 	DIR				*dir_struct;
 	struct dirent	*dir_dirent;
-	struct stat		dir_stat;
+	struct stat		d_st;
 	int				blocks_a;
 	int				blocks;
 	int				is_exist;
@@ -72,7 +72,7 @@ void                t_file_del(t_file *node);
 t_file				*config_compare(t_file	*file_lst, t_all *all);
 void				ls_only_file(t_file *file_lst, t_all *all);
 void				printf_len_hu_num(unsigned short int num, int n);
-void				printf_len_str(char *str, int n);
+void				prt_st(char *str, int n);
 void				printf_len_llnum(long long int num, int n);
 char				*cut_time(char *str);
 void				printf_len_post_str(char *str, int n);
@@ -83,7 +83,7 @@ int					comparator_r(t_file *left, t_file *right);
 int					comparator_tu(t_file *left, t_file *right);
 int					comparator_t(t_file *left, t_file *right);
 int					comparator_f(t_file *left, t_file *right);
-void				printf_len_str(char *str, int n);
+void				prt_st(char *str, int n);
 void				printf_len_post_str(char *str, int n);
 void				printf_len_llnum(long long int num, int n);
 void				printf_len_hu_num(unsigned short int num, int n);

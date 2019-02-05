@@ -8,43 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug"/>
+				<Option working_dir="/Users/lreznak-/Documents/newls/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug"/>
+				<Option working_dir="/Users/lreznak-/Documents/newls/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug"/>
+				<Option working_dir="/Users/lreznak-/Documents/newls/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ft_ls">
-				<Option output="/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/ft_ls" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug"/>
+				<Option output="/Users/lreznak-/Documents/newls/cmake-build-debug/ft_ls" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lreznak-/Documents/newls/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lreznak-/Documents/ft_ls_new/./inc"/>
+					<Add directory="/Users/lreznak-/Documents/newls/./inc"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -53,20 +53,20 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_ls"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_ls"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ft_ls/fast">
-				<Option output="/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/ft_ls" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug"/>
+				<Option output="/Users/lreznak-/Documents/newls/cmake-build-debug/ft_ls" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lreznak-/Documents/newls/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lreznak-/Documents/ft_ls_new/./inc"/>
+					<Add directory="/Users/lreznak-/Documents/newls/./inc"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -75,44 +75,47 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_ls/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 ft_ls/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lreznak-/Documents/newls/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/file_name_cmp.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/comparators.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/ft_ls.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/file_name_cmp.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/is_visible.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/ft_ls.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/ls_dir.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/is_visible.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/ls_files_r.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/ls_dir.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/merge_sort.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/ls_files_r.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/parse_flags.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/merge_sort.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/print_mode.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/parse_flags.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/t_file_new.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/print_mode.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/src/to_list.c">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/t_file_new.c">
 			<Option target="ft_ls"/>
 		</Unit>
-		<Unit filename="/Users/lreznak-/Documents/ft_ls_new/CMakeLists.txt">
+		<Unit filename="/Users/lreznak-/Documents/newls/src/to_list.c">
+			<Option target="ft_ls"/>
+		</Unit>
+		<Unit filename="/Users/lreznak-/Documents/newls/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

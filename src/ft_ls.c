@@ -35,20 +35,20 @@ void				ls_only_file(t_file *file_lst, t_all *all)
 	{
 		if (all->flags['l'])
 		{
-			print_mode(file_lst->dir_stat.st_mode);
-			printf_len_hu_num(file_lst->dir_stat.st_nlink, all->len_count_sym);
+			print_mode(file_lst->d_st.st_mode);
+			printf_len_hu_num(file_lst->d_st.st_nlink, all->len_cs);
 			if (!(all->flags['g']))
-				printf_len_str(getpwuid(file_lst->dir_stat.st_uid)->
-												pw_name, all->len_name);
-			printf_len_str(getgrgid(file_lst->dir_stat.st_gid)->
-													gr_name, all->len_gr);
-			printf_len_llnum(file_lst->dir_stat.st_size, all->len_ves);
+				prt_st(getpwuid(file_lst->d_st.st_uid)->
+						pw_name, all->l_n);
+			prt_st(getgrgid(file_lst->d_st.st_gid)->
+					gr_name, all->len_gr);
+			printf_len_llnum(file_lst->d_st.st_size, all->len_ves);
 			if (all->flags['u'])
 				printf(" %s ", cut_time(ctime(&((file_lst->
-							dir_stat).st_atimespec).tv_sec)));
+							d_st).st_atimespec).tv_sec)));
 			else
 				printf(" %s ", cut_time(ctime(&((file_lst->
-							dir_stat).st_ctimespec).tv_sec)));
+							d_st).st_ctimespec).tv_sec)));
 			printf("%s\n", file_lst->name);
 		}
 		else
@@ -79,15 +79,15 @@ void				cont_stat(t_file *file, t_all *all)
 	dump = file;
 	while (file)
 	{
-		stat(file->name, &(file->dir_stat));
-		if (all->len_count_sym < ft_strlen(ft_itoa(file->dir_stat.st_nlink)))
-			all->len_count_sym = ft_strlen(ft_itoa(file->dir_stat.st_nlink));
-		if (all->len_name < ft_strlen(getpwuid(file->dir_stat.st_uid)->pw_name))
-			all->len_name = ft_strlen(getpwuid(file->dir_stat.st_uid)->pw_name);
-		if (all->len_ves < ft_strlen(ft_itoa(file->dir_stat.st_size)))
-			all->len_ves = ft_strlen(ft_itoa(file->dir_stat.st_size));
-		if (all->len_gr < ft_strlen(getgrgid(file->dir_stat.st_gid)->gr_name))
-			all->len_gr = ft_strlen(getgrgid(file->dir_stat.st_gid)->gr_name);
+		stat(file->name, &(file->d_st));
+		if (all->len_cs < ft_strlen(ft_itoa(file->d_st.st_nlink)))
+			all->len_cs = ft_strlen(ft_itoa(file->d_st.st_nlink));
+		if (all->l_n < ft_strlen(getpwuid(file->d_st.st_uid)->pw_name))
+			all->l_n = ft_strlen(getpwuid(file->d_st.st_uid)->pw_name);
+		if (all->len_ves < ft_strlen(ft_itoa(file->d_st.st_size)))
+			all->len_ves = ft_strlen(ft_itoa(file->d_st.st_size));
+		if (all->len_gr < ft_strlen(getgrgid(file->d_st.st_gid)->gr_name))
+			all->len_gr = ft_strlen(getgrgid(file->d_st.st_gid)->gr_name);
 		if (all->len_namef < ft_strlen(file->name))
 			all->len_namef = ft_strlen(file->name);
 		file = file->next;
@@ -95,27 +95,54 @@ void				cont_stat(t_file *file, t_all *all)
 	file = dump;
 }
 
-void arg_parse(t_file *args, t_all *all, t_file *args_cpy)
+void				arg_parse(t_file *args, t_all *all, t_file *args_cpy)
 {
 	args = config_compare(args_cpy, all);
 	args = to_first(args);
 	args_cpy = args;
 	cont_stat(args_cpy, all);
 	while (args)
-		{
-			if (!(S_ISDIR(args->dir_stat.st_mode)))
-				ls_only_file(args, all);
-			args = args->next;
-		}
+	{
+		if (!(S_ISDIR(args->d_st.st_mode)))
+			ls_only_file(args, all);
+		args = args->next;
+	}
 	while (args_cpy)
+	{
+		if (S_ISDIR(args_cpy->d_st.st_mode))
 		{
-			if (S_ISDIR(args_cpy->dir_stat.st_mode))
-			{
-				printf("\n%s:\n", args_cpy->name);
-				ls_dir(opendir(args_cpy->name), args_cpy->name, all);
-			}
-			args_cpy = args_cpy->next;
+			printf("\n%s:\n", args_cpy->name);
+			ls_dir(opendir(args_cpy->name), args_cpy->name, all);
 		}
+		args_cpy = args_cpy->next;
+	}
+}
+
+void				print_args(t_file *args, t_all *all, t_file *args_cpy)
+{
+	args = merge_sort(to_first(args), &comparator_classic);
+	args_cpy = args;
+	while (args)
+	{
+		if (!args->is_exist)
+		{
+			t_file_del(args);
+			ls_error(args->name, 1);
+		}
+		args = args->next;
+	}
+	arg_parse(args, all, args_cpy);
+}
+
+t_file				*parse_args(int c, char *const *v,
+							int last_flag, t_file *args)
+{
+	while (last_flag < c)
+	{
+		args = to_list(NULL, v[last_flag], ".", args);
+		last_flag++;
+	}
+	return (args);
 }
 
 int					main(int c, char *v[])
@@ -140,23 +167,8 @@ int					main(int c, char *v[])
 	else
 	{
 		last_flag++;
-		while (last_flag < c)
-		{
-			args = to_list(NULL, v[last_flag], ".", args);
-			last_flag++;
-		}
-		args = merge_sort(to_first(args), &comparator_classic);
-		args_cpy = args;
-		while (args)
-		{
-			if (!args->is_exist)
-			{
-				t_file_del(args);
-				ls_error(args->name, 1);
-			}
-			args = args->next;
-		}
-		arg_parse(args, all, args_cpy);
+		args = parse_args(c, v, last_flag, args);
+		print_args(args, all, args_cpy);
 	}
 	return (0);
 }

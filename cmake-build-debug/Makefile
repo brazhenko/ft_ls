@@ -48,10 +48,10 @@ RM = /Users/lreznak-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lreznak-/Documents/ft_ls_new
+CMAKE_SOURCE_DIR = /Users/lreznak-/Documents/newls
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lreznak-/Documents/ft_ls_new/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/lreznak-/Documents/newls/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles /Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles /Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/ft_ls_new/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/newls/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ ft_ls: cmake_check_build_system
 ft_ls/fast:
 	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/build
 .PHONY : ft_ls/fast
+
+src/comparators.o: src/comparators.c.o
+
+.PHONY : src/comparators.o
+
+# target to build an object file
+src/comparators.c.o:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/comparators.c.o
+.PHONY : src/comparators.c.o
+
+src/comparators.i: src/comparators.c.i
+
+.PHONY : src/comparators.i
+
+# target to preprocess a source file
+src/comparators.c.i:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/comparators.c.i
+.PHONY : src/comparators.c.i
+
+src/comparators.s: src/comparators.c.s
+
+.PHONY : src/comparators.s
+
+# target to generate assembly for a file
+src/comparators.c.s:
+	$(MAKE) -f CMakeFiles/ft_ls.dir/build.make CMakeFiles/ft_ls.dir/src/comparators.c.s
+.PHONY : src/comparators.c.s
 
 src/file_name_cmp.o: src/file_name_cmp.c.o
 
@@ -402,6 +429,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ft_ls"
+	@echo "... src/comparators.o"
+	@echo "... src/comparators.i"
+	@echo "... src/comparators.s"
 	@echo "... src/file_name_cmp.o"
 	@echo "... src/file_name_cmp.i"
 	@echo "... src/file_name_cmp.s"

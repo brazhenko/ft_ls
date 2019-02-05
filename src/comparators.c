@@ -34,8 +34,8 @@ int				comparator_r(t_file *left, t_file *right)
 
 int				comparator_tu(t_file *left, t_file *right)
 {
-	if (left->dir_stat.st_atimespec.tv_sec >
-		right->dir_stat.st_atimespec.tv_sec)
+	if (left->d_st.st_atimespec.tv_sec >
+		right->d_st.st_atimespec.tv_sec)
 		return (1);
 	else
 		return (0);
@@ -43,8 +43,8 @@ int				comparator_tu(t_file *left, t_file *right)
 
 int				comparator_t(t_file *left, t_file *right)
 {
-	if (left->dir_stat.st_ctimespec.tv_sec >
-		right->dir_stat.st_ctimespec.tv_sec)
+	if (left->d_st.st_ctimespec.tv_sec >
+		right->d_st.st_ctimespec.tv_sec)
 		return (1);
 	else
 		return (0);

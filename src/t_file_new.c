@@ -41,7 +41,7 @@ t_file			*t_file_new(struct dirent *file, char *name, char *full_name)
 	new->prev = NULL;
 	new->next = NULL;
 	if ((stat(ft_strjoin(ft_strjoin(full_name, "/"), name),
-									&new->dir_stat)) == -1)
+									&new->d_st)) == -1)
 	{
 		new->is_exist = 0;
 	}

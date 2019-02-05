@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/lreznak-/Documents/ft_ls_new/./inc 
+C_INCLUDES = -I/Users/lreznak-/Documents/newls/./inc 
 
