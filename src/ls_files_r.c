@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:25:50 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/06 04:22:35 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 04:32:34 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ls_files_r(char *full_name, t_all *all)
 	t_file			*cur_dir_lst;
 
 	cur_dir = opendir(full_name);
-	if (!cur_dir)
+	if (!cur_dir || full_name[ft_strlen(full_name) - 1] == '/')
 		return (0);
 	if (!all->first)
 		printf("\n");
