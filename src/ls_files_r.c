@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:25:50 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/06 02:45:24 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 03:31:08 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@ void	del_dir(t_file *cur_dir)
 	free(cur_dir);
 }
 
+int		if_hidden(char *name)
+{
+	int i;
+
+	i = (int)ft_strlen(name);
+	while (--i >= 0)
+	{
+		if (name[i] == '/')
+			return (0);
+		if (name[i] == '.')
+			return (1);
+	}
+	return (0);
+}
+
 int		ls_files_r(char *full_name, t_all *all)
 {
 	DIR				*cur_dir;
@@ -33,7 +48,8 @@ int		ls_files_r(char *full_name, t_all *all)
 	while (cur_dir_lst)
 	{
 		if (ft_strcmp(cur_dir_lst->name, "..") &&
-				ft_strcmp(cur_dir_lst->name, "."))
+				ft_strcmp(cur_dir_lst->name, ".") && (all->flags['a'] ||
+							!if_hidden(cur_dir_lst->name)))
 			ls_files_r(ft_strjoin(ft_strjoin(full_name, "/"),
 					cur_dir_lst->name), all);
 		cur_dir_lst = cur_dir_lst->next;

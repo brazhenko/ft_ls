@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/02/05 08:39:41 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 03:33:22 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,7 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 
 	total = 0;
 	file_lst = NULL;
-	all->len_cs = 0;
-	all->l_n = 0;
-	all->len_ves = 0;
-	all->len_gr = 0;
+	insert_file(all);
 	while ((file = readdir(cur_dir)))
 		total += insert(&file_lst, file->d_name, full_name, all);
 	if (all->flags['l'])
@@ -104,6 +101,8 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 		else
 			printf("Total: %d\n", total);
 	}
+	else if (all->flags['R'] && ft_strcmp(full_name, "."))
+		printf("\n\n%s:\n", full_name);
 	file_lst = config_compare(file_lst, all);
 	cpy = file_lst;
 	print_file(all, file_lst);

@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 09:29:56 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/05 09:31:07 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 03:08:59 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void				print_args(t_file *args, t_all *all, t_file *args_cpy)
 		}
 		args = args->next;
 	}
+	printf("\n");
 	arg_parse(args, all, args_cpy);
 }
 
