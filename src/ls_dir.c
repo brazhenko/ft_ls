@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/18 20:40:28 by lreznak-          #+#    #+#             */
-/*   Updated: 2019/02/06 03:33:22 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 04:07:03 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void			print_file(const t_all *all, t_file *file_lst)
 		}
 		file_lst = file_lst->next;
 	}
+	printf("\n");
 }
 
 t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
@@ -102,7 +103,7 @@ t_file			*ls_dir(DIR *cur_dir, char *full_name, t_all *all)
 			printf("Total: %d\n", total);
 	}
 	else if (all->flags['R'] && ft_strcmp(full_name, "."))
-		printf("\n\n%s:\n", full_name);
+		printf("%s:\n", full_name);
 	file_lst = config_compare(file_lst, all);
 	cpy = file_lst;
 	print_file(all, file_lst);

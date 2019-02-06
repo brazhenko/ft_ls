@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 12:27:02 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/06 03:34:18 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 04:21:17 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct		s_all
 	int						len_gr;
 	int						len_ves;
 	int						len_namef;
+	int						first;
 }					t_all;
 
 typedef struct		s_file

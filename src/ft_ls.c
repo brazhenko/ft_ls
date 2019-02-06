@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:33:06 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/06 02:48:48 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 04:21:03 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int					main(int c, char *v[])
 	args = NULL;
 	flags = parse_flags(c, v, &last_flag);
 	all->flags = flags;
+	all->first = 1;
 	if (c == last_flag + 1)
 	{
 		if (flags['R'])

@@ -6,7 +6,7 @@
 /*   By: bbaelor- <bbaelor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 09:29:56 by bbaelor-          #+#    #+#             */
-/*   Updated: 2019/02/06 03:08:59 by bbaelor-         ###   ########.fr       */
+/*   Updated: 2019/02/06 04:20:15 by bbaelor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ void				arg_parse(t_file *args, t_all *all, t_file *args_cpy)
 	{
 		if (S_ISDIR(args_cpy->d_st.st_mode))
 		{
-			printf("\n%s:\n", args_cpy->name);
-			ls_dir(opendir(args_cpy->name), args_cpy->name, all);
+			if (all->flags['R'])
+				ls_files_r(args_cpy->name, all);
+			// printf("\n%s:\n", args_cpy->name);
+			else
+				ls_dir(opendir(args_cpy->name), args_cpy->name, all);
 		}
 		args_cpy = args_cpy->next;
 	}
@@ -57,7 +60,6 @@ void				print_args(t_file *args, t_all *all, t_file *args_cpy)
 		}
 		args = args->next;
 	}
-	printf("\n");
 	arg_parse(args, all, args_cpy);
 }
 
